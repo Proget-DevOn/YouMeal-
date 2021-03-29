@@ -10,36 +10,40 @@
 <script scr="inscription.js"></script>
   <title>Inscription</title>
 </head>
-  <body>
+  <body class="bg-orange-bg">
     <form class=" needs-validation" novalidate action="connexion.php" method="post">
-<div class="row justify-content-center">
-      <div class="col-md-4">
-        <label for="Pseudo" class="form-label">Pseudo</label>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <label for="Pseudo" class="form-label">Pseudo</label>
           <input type="text" class="form-control" name="pseudo" required>
           <div class="invalid-feedback">
             Pseudo invalide ou deja utilisé.
           </div>
         </div>
       </div>
+
       <div class="row justify-content-center">
-      <div class="col-md-4">
-        <label for="password" class="form-label">mot de passe</label>
-        <input type="password" class="form-control" name="password" required>
-        <div class="invalid-feedback">
-          Mot de passe invalide.
+        <div class="col-md-4">
+          <label for="password" class="form-label">mot de passe</label>
+          <input type="password" class="form-control" name="password" required>
+          <div class="invalid-feedback">
+            Mot de passe invalide.
+          </div>
         </div>
       </div>
-    </div>
-<div class="row justify-content-center">
-    <div class="col-md-4">
-      <button class="btn btn-primary" type="submit">Valider</button>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-      <div class="col-md-4">
-        <button class="btn" type="button"><a href="inscription.html">Inscription</a></button>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </div>
       </div>
-    </div>
-      </form>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <button class="btn" type="button"><a href="inscription.html">Inscription</a></button>
+        </div>
+      </div>
+    </form>
   </body>
 </html>
