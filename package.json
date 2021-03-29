@@ -1,0 +1,22 @@
+{
+  "name": "youmeal-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inscription.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proget-DevOn/YouMeal-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Proget-DevOn/YouMeal-/issues"
+  },
+  "homepage": "https://github.com/Proget-DevOn/YouMeal-#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
+}
