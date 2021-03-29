@@ -10,94 +10,61 @@
 <script scr="inscription.js"></script>
     <title>Inscription</title>
   </head>
-  <body>
-    <div class="bg-orange-bg">
-    <img src="ressources/logo_youmeal.png" class="img-fluid" alt="YouMeal">
+  <body class="bg-orange-bg">
+    
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-4">
+        <img src="ressources/logo_youmeal.png" class="img-fluid" alt="YouMeal">
 
-    <form class="needs-validation" novalidate action="inscription.php" method="post">
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4"></div>
-      </div>
+        <form class="needs-validation" novalidate action="inscription.php" method="post">
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <input type="text" class="form-control" name="nom" placeholder="Nom" required>
+          <input type="text" class="form-control mt-4 border-rose-input" name="nom" placeholder="Nom" required>
           <div class="invalid-feedback">
-            entrez votre nom
+            Entrez votre nom
           </div>
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
+          <input type="text" class="form-control mt-4 border-rose-input" name="prenom" placeholder="Prenom" required>
           <div class="invalid-feedback">
-            entrez votre Prenom
+            Entrez votre Prenom
           </div>
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-            <input type="text" class="form-control" name="pseudo" placeholder="Pseudo" required>
-            <div class="invalid-feedback">
-              Pseudo invalide ou deja utilisé.
-            </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <input type="password" class="form-control" name="password" placeholder="mot de passe" required>
-          <input type="password" class="form-control" name="password2" placeholder="confirmer mot de passe" required>
+          <input placeholder="Date de naissance" class="textbox-n form-control mt-4 border-rose-input" type="text" onfocus="(this.type='date')" id="birthday" name="birthday" required>
           <div class="invalid-feedback">
-            mot de passe invalide.
+            Vous devez avoir plus de 13 ans.
           </div>
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <input type="text" class="form-control" placeholder="email" name="email" required>
-          <input type="text" class="form-control" placeholder="confirmer l'email" name="email2" required>
+          <input type="text" class="form-control mt-4 border-rose-input" name="pseudo" placeholder="Identifiant" required>
           <div class="invalid-feedback">
-            email invalide ou deja utilisé.
+            Identifiant invalide ou deja utilisé.
           </div>
-        </div>
-      </div>
-      
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <label for="birthday" class="form-date">date de naissance</label>
-          <input type="date" class="form-control" id="birthday" name="birthday" required>
-          <div class="invalid-feedback">
-            vous devez avoir plus de 13 ans
-          </div>
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <div class="form-check">
+          <input type="text" class="form-control mt-4 border-rose-input" placeholder="Email" name="email" required>
+          <input type="text" class="form-control mt-4 border-rose-input" placeholder="Confirmer votre email" name="email2" required>
+          <div class="invalid-feedback">
+            Email invalide ou déjà utilisé.
+          </div>
+
+          <input type="password" class="form-control mt-4 border-rose-input" name="password" placeholder="Mot de passe" required>
+          <input type="password" class="form-control mt-4 border-rose-input" name="password2" placeholder="Confirmer votre mot de passe" required>
+          <div class="invalid-feedback">
+            Mot de passe invalide.
+          </div>
+
+          <div class="form-check mt-4">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
             <label class="form-check-label" for="invalidCheck">
-              J'accepte les terme et <a href="condition.html">condition</a>
+              J'accepte les <a href="condition.html">conditions</a> générales d'utilisation et les <a href="condition.html">conditions</a> générales de ventes
             </label>
             <div class="invalid-feedback">
               You must agree before submitting.
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-4">
-          <button class="btn btn-primary" type="submit">Valider</button>
-        </div>
-      </div>
+          <button class="btn bg-rose-btn text-white mt-4 border-rose-btn" type="submit">Valider</button>
 
-    </form>
-  </div>
+        </form>
+      </div>
+    </div>
     
   </body>
 </html>

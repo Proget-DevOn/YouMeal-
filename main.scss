@@ -1,5 +1,9 @@
 $theme-colors: (
-  "orange-bg": #ffe1a5
+  "orange-bg": #ffe1a5,
+  "rose-input" : #d34472,
+  "rose-btn" : #f99170
 );
+
+$border-radius: 10rem;
 
 @import "node_modules/bootstrap/scss/bootstrap";
