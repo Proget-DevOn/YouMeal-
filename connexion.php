@@ -5,8 +5,8 @@ function verrifie_login($pseudo,$password){
   $sql = "SELECT * FROM utilisateurs WHERE pseudo='".$pseudo."'  AND password ='".$password."'";
   $req=$conn->query($sql);
   return 1;
-
 }
+
 $pseudo=$_POST['pseudo'];
 $password=$_POST['password'];
 if(isset($_POST['pseudo'],$_POST['password']))
