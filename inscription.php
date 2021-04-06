@@ -3,20 +3,27 @@ include("config.php");
 function ajout_login($pseudo,$password,$email,$birthday,$nom,$prenom){
   global $conn;
   $sql = "INSERT INTO utilisateurs (pseudo,password,email,date_naissance,nom,prenom) VALUES ('".$pseudo."', '".$password."','".$email."','".$birthday."','".$nom."','".$prenom."')";
-  $req=$conn->query($sql);
-  return 1;
+
+  if(  $req=$conn->query($sql))
+    {
+      $verif=TRUE;
+  return $verif;
+}
+else {
+  $verif=false;
+  return $verif;
 
 }
-if(isset($_POST['pseudo'],$_POST['password'],$_POST['email'],$_POST['birthday'],$_POST['nom'],$_POST['prenom']))
+}
+if(ajout_login($_POST['pseudo'],$_POST['password'],$_POST['email'],$_POST['birthday'],$_POST['nom'],$_POST['prenom'])==true)
 {
-
-ajout_login($_POST['pseudo'],$_POST['password'],$_POST['email'],$_POST['birthday'],$_POST['nom'],$_POST['prenom']);
 $dest="connexion.html";
 
  echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
 }
+
 else{
-  $dest="inscription.html";
-  echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+  echo "il faut remplir tout les champs";
+include('inscription.html');
 }
 ?>
