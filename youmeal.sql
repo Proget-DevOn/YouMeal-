@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 23 mars 2021 à 14:08
+-- Généré le : Dim 04 avr. 2021 à 20:20
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `chat` (
 
 DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE IF NOT EXISTS `ingredients` (
-  `quantite` int(11) NOT NULL,
-  `nom_ingredient` int(11) NOT NULL,
+  `quantite` varchar(11) NOT NULL,
+  `nom_ingredient` varchar(50) NOT NULL,
   `id_recette` int(11) NOT NULL,
   PRIMARY KEY (`nom_ingredient`,`id_recette`),
   KEY `id_recette` (`id_recette`)
@@ -142,8 +142,8 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   `note` int(11) NOT NULL,
   `auteur` varchar(20) NOT NULL,
   `categorie` enum('entree','plat','desert','aperitif') NOT NULL,
-  `origine` enum('asiatique','indien','afrique_ouest','afrique_centrale','afrique_est','afrique_nord','moyen_orient','amerique_nord','amerique_latine','russie') NOT NULL,
-  `regime` enum('vegan','vegetarien','helthy') NOT NULL,
+  `regime` enum('vegan','vegetarien','helthy','autre') NOT NULL,
+  `image` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_recette`),
   UNIQUE KEY `auteur` (`auteur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -172,6 +172,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`pseudo`, `password`, `email`, `date_naissance`, `nom`, `prenom`, `bio`) VALUES
+('diana', 'azerty', 'di.diana@live.fr', '1998-01-21', 'diangana', 'diana', NULL),
 ('dianaa', 'Wp119wP119$*', 'diana@gmail.com', '1998-01-21', 'Diangana', 'Diana', NULL);
 COMMIT;
 
