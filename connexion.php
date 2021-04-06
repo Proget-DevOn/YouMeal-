@@ -21,4 +21,4 @@ else {
   $dest="connexion.html";
      echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
 }
- ?>
+?>
