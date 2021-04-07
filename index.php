@@ -23,7 +23,9 @@ if(!isset($_SESSION['login']))
 }?><form  method="GET" action="">
   <input type="text" name="recherche" placeholder="recherche"><input type="submit" value="chercher">
 </form><?php
+include('config.php');
 global $conn;
+
 if(isset($_GET['recherche']))
 {
   $sql="SELECT * from recettes WHERE
@@ -31,7 +33,7 @@ if(isset($_GET['recherche']))
   OR  regime like '%".$_GET['recherche']."%'
   OR categorie lik0e '%".$_GET['recherche']."%'";
   $rep = $conn->query($sql);
-  while($donnees = $rep->fetch_assoc())
+  while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
   {
     ?>
     <div class="row">
@@ -39,7 +41,7 @@ if(isset($_GET['recherche']))
     <h3><?php echo $donnees['nom_recette'];?></h3>
     <a href="image/image_recettes/<?php  echo $donnees['image']; ?>"><img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="" width="200" height="200"></a>
     <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
-    <p><?php echo $donnees['cout']; ?> <br/>Temps de realisation:<?php  echo $donnees['temps_realisation']; ?></p>
+    <p><?php echo $donnees['cout']; ?> <br/>Temps de realisation:<?php  echo $donnees['temps_execution']; ?></p>
   </div>
   <?php
  }
@@ -52,10 +54,11 @@ else {
 Bonjour
 <?php
 echo htmlspecialchars($_SESSION['login']);
-$rep = $conn->query('SELECT * FROM recettes');
-
-while($donnees = $rep->fetch_assoc())
+$sql='SELECT * FROM recettes';
+$rep = $conn->query($sql);
+while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
 {
+
 ?>
 <button class="btn" type="button"><a href="ajouter_recette.php">ajouter une recette</a></button>
 
@@ -64,7 +67,7 @@ while($donnees = $rep->fetch_assoc())
 <h3><?php echo $donnees['nom_recette'];?></h3>
 <a href="image/image_recettes/<?php  echo $donnees['image']; ?>"><img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="" width="200" height="200"></a>
 <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
-<p><?php echo $donnees['cout']; ?> <br/>Temps de realisation:<?php  echo $donnees['temps_realisation']; ?></p>
+<p><?php echo $donnees['cout']; ?> <br/>Temps de realisation:<?php  echo $donnees['temps_execution']; ?></p>
 </div>
 <?php
 }

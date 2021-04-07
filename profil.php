@@ -21,13 +21,15 @@
 
     }
 include('config.php');
+global $conn;
+
     //afficher le profil d'une autre personne
  if(isset($_GET["pseudo"]))
  {
 
 
  $rep=$conn->query("SELECT * from utilisateurs");
-while($donnees=$rep->fetch_assoc())
+while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 {
   if( $donnees['pseudo']==$_GET['pseudo'])
   {
@@ -44,7 +46,7 @@ while($donnees=$rep->fetch_assoc())
 //afficher son profil
 else {
   $rep=$conn->query("SELECT * from profil");
- while($donnees=$rep->fetch_assoc())
+ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
@@ -64,7 +66,7 @@ else {
 include("upload_profil.php");?>
     <form enctype="multipart/form-data" action="" method="POST">
     	  <p>
-    		<textarea name="interet" rows="8" cols="45" placeholder="centre d'intêret" required /></textarea>
+    		<textarea name="interet" rows="8" cols="45" placeholder="centre d'intÃªret" required /></textarea>
     	</p>
 
     	  <p><input type="submit" value="OK"></p>
@@ -74,7 +76,7 @@ include("upload_profil.php");?>
         {
           include("config.php");
           $rep=$conn->query("SELECT * from utilisateurs where pseudo='".$_SESSION['login']."'");
-          if ($donnees=$rep->fetch_assoc())
+          if ($donnees=$rep->fetch(PDO::FETCH_BOTH))
           {
             $sql="UPDATE utilisateurs SET photo='".$_POST['image']."' WHERE pseudo='".$_SESSION['login']."'";
             $req=$conn->query($sql);
@@ -82,6 +84,14 @@ include("upload_profil.php");?>
             $req=$conn->query($sql);
             $dest="profil.php";
              echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+             $rep=$conn->query("SELECT * from abonnement where pseudo_abonne='".$_SESSION['login']."'");
+             if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+
+             }
+             $rep=$conn->query("SELECT * from abonnement where pseudo_abonnement='".$_SESSION['login']."'");
+             if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+
+             }
 
 
           }
@@ -96,7 +106,5 @@ include("upload_profil.php");?>
 
 
  ?>
-<?php include("footer.php");
-?>
 </body>
 </html>
