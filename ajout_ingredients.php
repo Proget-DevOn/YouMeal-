@@ -21,27 +21,34 @@
 
     }
     ?>
-    <form class="needs-validation" enctype="multipart/form-data" novalidate action="ajout_recette.php" method="post">
-      <div class="col-sm-3 mt-4" id="inserer_ing">
-        <h2>
-          Ingredients
-        </h2>
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-4 text-center">
+        
+        <form class="needs-validation" enctype="multipart/form-data" novalidate action="ajout_recette.php" method="post">
+          <div class="col-sm-3 mt-4" id="inserer_ing">
+            <h2>
+              Ingredients
+            </h2>
 
-        <div >
-        <input type="text" class="form-control col-sm-3 border-rose-input" name="quantite"  id="1" placeholder="15g" required/>
-          <input type="text" class="form-control  border-rose-input" name="ingredient"  id="1" placeholder="ingredient1" required/>
-        </div>
+            <div >
+            <input type="text" class="form-control col-sm-3 border-rose-input" name="quantite"  id="1" placeholder="15g" required/>
+              <input type="text" class="form-control  border-rose-input" name="ingredient"  id="1" placeholder="ingredient1" required/>
+            </div>
+
+          </div>
+          <div id="inserer_etp">
+            <h2 class="form--header-title">
+              Etape de la recette
+            </h2>
+            <textarea class="form-control mt-4 border-rose-input" name="etape"  id="1" placeholder="etape 1" required/></textarea>
+          </div>
+          <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
+        </form>
 
       </div>
-      <div id="inserer_etp">
-        <h2 class="form--header-title">
-          Etape de la recette
-        </h2>
-        <textarea class="form-control mt-4 border-rose-input" name="etape"  id="1" placeholder="etape 1" required/></textarea>
-      </div>
-      <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
-    </form>
+    </div>
   </body>
+  
   <script>
   let click_ing=1;
   let click_etape=1;
