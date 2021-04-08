@@ -1,7 +1,8 @@
 <?php
 include("config.php");
+include('connexion.html');
 
-function verrifie_login($pseudo,$password){
+function verifie_login($pseudo,$password){
   $verif=false;
   global $conn;
   $sql = "SELECT * FROM utilisateurs WHERE pseudo='".$pseudo."'  AND password ='".$password."'";
@@ -21,11 +22,9 @@ else {
 $pseudo=$_POST['pseudo'];
 $password=$_POST['password'];
 $result=false;
-verrifie_login($pseudo,$password);
-if(verrifie_login($pseudo,$password)==true)
-  {
-    if (!session_id())
-    {
+verifie_login($pseudo,$password);
+if(verifie_login($pseudo,$password)==true){
+    if (!session_id()){
       session_start();
      $_SESSION['login'] = $pseudo;
 
@@ -37,11 +36,12 @@ if(verrifie_login($pseudo,$password)==true)
     }
   }
 
-else
-{
-  echo "il faut remplir tout les champs";
-include('connexion.html');
-
-
+else{
+  echo '<script language="javascript">';
+  echo 'document.getElementById("buttonconnect").addEventListener("click", myFunction);';
+  echo 'function myFunction() {';
+  echo 'var password = document.getElementById("password").value;';
+  echo 'if(password==""){alert("Veuillez renseigner un mot de passe");}}';
+  echo '</script>';
 }
  ?>
