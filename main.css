@@ -46,3 +46,45 @@ body{
 .logo_inscription{
     margin-top: 8em;
 }
+
+
+/* Page Accueil*/
+
+body {
+    background-image: linear-gradient(to bottom, white, #ffc4b4);
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 1000px;
+  }
+
+
+/*Barre de recherche*/
+
+.barre_recherche_div{
+    background-color: lightgray;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    height: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.barre_recherche_input{
+    border: none;
+    width: 78%;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    height: 100%;
+    background-color: lightgray;
+}
+
+.barre_recherche_input:focus { outline: 0; }
+
+.barre_recherche_btn{
+    border: none;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    background-color: lightgray;
+}
