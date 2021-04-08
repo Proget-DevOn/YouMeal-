@@ -45,7 +45,7 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 }
 //afficher son profil
 else {
-  $rep=$conn->query("SELECT * from profil");
+  $rep=$conn->query("SELECT * from utilisateurs");
  while($donnees=$rep->fetch(PDO::FETCH_BOTH))
  {
    if( $donnees['pseudo']==$_SESSION['login'])
@@ -61,12 +61,12 @@ else {
 
 ?>
 <!--formulaire depliant avec bootstrap-->
-<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#profil">bio</button><br/>
+<button type="button" class="btn btn-success" data-toggle="collapse">modifier</button><br/>
 <div id="profil" class="collapse"> <?php
 include("upload_profil.php");?>
     <form enctype="multipart/form-data" action="" method="POST">
     	  <p>
-    		<textarea name="interet" rows="8" cols="45" placeholder="centre d'intÃªret" required /></textarea>
+    		<textarea name="bio" rows="8" cols="45" placeholder="bio" required /></textarea>
     	</p>
 
     	  <p><input type="submit" value="OK"></p>
