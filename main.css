@@ -88,3 +88,17 @@ body {
     border-bottom-left-radius: 1em;
     background-color: lightgray;
 }
+
+@font-face {
+    font-family: 'monogramregular';
+    src: url('ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('ressources/font/monogram-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.police_monogram{
+    font-family: 'monogramregular';
+    color: #fc9778;
+}
