@@ -20,18 +20,20 @@ if(!isset($_SESSION['login']))
   include('connexion.html');
   die('');
 
-}?><form  method="GET" action="">
+}?>
+<p><a href="ajouter_recette.php">ajouter une recette</a></p>
+<form  method="GET" action="">
   <input type="text" name="recherche" placeholder="recherche"><input type="submit" value="chercher">
 </form><?php
 include('config.php');
 global $conn;
-
 if(isset($_GET['recherche']))
 {
   $sql="SELECT * from recettes WHERE
   nom_recette LIKE '%".$_GET['recherche']."%'
+  OR auteur LIKE '%".$_GET['recherche']."%'
   OR  regime like '%".$_GET['recherche']."%'
-  OR categorie lik0e '%".$_GET['recherche']."%'";
+  OR categorie like '%".$_GET['recherche']."%'";
   $rep = $conn->query($sql);
   while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
   {
@@ -60,7 +62,6 @@ while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
 {
 
 ?>
-<button class="btn" type="button"><a href="ajouter_recette.php">ajouter une recette</a></button>
 
 <div class="row">
 <div class="col-sm-2">
