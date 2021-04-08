@@ -4,7 +4,7 @@ function ajout_login($pseudo,$password,$email,$birthday,$nom,$prenom){
   global $conn;
 
     if(!empty($pseudo) && !empty($password)){
-      $options = ['cost' => 1];
+      $options = ['cost' => 10];
       $hashpass = password_hash($password, PASSWORD_BCRYPT, $options);
     }
   
