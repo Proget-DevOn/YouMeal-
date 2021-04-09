@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `recettes` (
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `pseudo` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `date_naissance` date NOT NULL,
   `nom` varchar(30) NOT NULL,
