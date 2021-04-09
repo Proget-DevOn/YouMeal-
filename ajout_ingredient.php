@@ -1,21 +1,49 @@
 <?php
 
 include("config.php");
+include("ajout_ingredients.php");
 global $conn;
-$idd=$_POST['nb'];
-for ($i=0; $i <$_POST['nb'] ; $i++) {
-  $sql = "INSERT INTO ingredient(nom_ingredient,id_recette) VALUES ('".$_POST['id_recette']."','".$_POST['$idd']."')";
-  if(  $req=$conn->query($sql)==TRUE)
-    {
-      $dest="ajouter_recette.html";
-
-       echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+if(count($_POST)>0){
+  $key=array_keys($_POST);
+  $val=array_values($_POST);
+  for($i=0;$i<count($_POST);$i++)
+  {
+    //echo $key[$i];
+    ${$key[$i]}=$val[$i];
   }
-  else{
-  echo $sql;
-  echo "il faut remplir tout les champs";
-  include('ajouter_recette.php');
+  echo $val[0];
+    $nb_etape=count($_POST)-((int)$val[1]+2);
+    //echo $nb_etape;
+    $nb_ing=count($_POST)-((int)$val[2]+2);
+    //echo $nb_ing;
+    for ($j=1; $j <$nb_ing ; $j++) {
+        $valeur=${"ingredient".(string)$j};
+        $sql = "INSERT INTO ingredients(id_recette,nom_ingredient) VALUES ('".${"id_recette"}."','".$valeur."')";
+        if(  $req=$conn->query($sql)==TRUE) {
+            echo "reussi";
+        }
+        else{
+        echo $sql;
+        echo "il faut remplir tout les champs";
+        }
+      }
+for ($e=1; $e <$nb_etape ; $e++) {
+
+      $valeur=${"etape".$e};
+      $sql2 = "INSERT INTO preparation(id_etape,id_recette,description_etape) VALUES ('".$e."','".$id_recette."','".$valeur."')";
+      if(  $req2=$conn->query($sql2)==TRUE)
+        {
+            echo $sql2;
+          echo "reussi";
+    }
+    else{
+    echo $sql2;
+    echo "il faut remplir tout les champs";
+    }
+
+
   }
 }
+
 
 ?>
