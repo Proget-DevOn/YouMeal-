@@ -13,9 +13,10 @@ function ajout_login($pseudo,$password,$email,$birthday,$nom,$prenom){
 }
 
 if(ajout_login($_POST['pseudo'],$_POST['password'],$_POST['email'],$_POST['birthday'],$_POST['nom'],$_POST['prenom'])==true){
-  header("Location:connexion.php");
+  header("Location:thankpage.html");
 }
 else{
-  header("Location:connexion.php");
+  header("Location:thankpage.html");
 }
+
 ?>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Merci pour votre inscription !</p>
+    <div>Vous serez redirigé vers la page de connexion dans <span id="time">05</span> secondes !</div>
+</body>
+
+<script>
+    function changePage(){
+        window.location.href = "connexion.php";
+    }
+    setTimeout(changePage, 5000);
+
+    function startTimer(duration, display) {
+    var timer = duration, seconds;
+    setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveSeconds = 4,
+        display = document.querySelector('#time');
+    startTimer(fiveSeconds, display);
+};
+</script>
+</html>
