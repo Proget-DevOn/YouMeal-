@@ -213,3 +213,23 @@ label.logo:hover{
         left:0;
     }
 }
+
+@media(min-width:1000px){
+    nav{
+        justify-content: normal;
+    }
+    label.logo{
+        margin-left: 70px;
+        margin-right: 80px;
+    }
+    nav a img{
+        display: inline-block;
+        position: absolute;
+        right: 68px;
+        top: 25px;
+    }
+    nav ul{
+        position: absolute;
+        right: 110px;
+    }
+}
