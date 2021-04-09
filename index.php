@@ -33,8 +33,8 @@
       </div>
 
       <ul>
-          <li><a class="mr-5" href="#">MENU1</a></li>
-          <li><a class="mr-5" href="#">MENU2</a></li>
+          <li><a href="#">MENU1</a></li>
+          <li><a href="#">MENU2</a></li>
           <li><a href="#">MENU3</a></li>
       </ul>
 
