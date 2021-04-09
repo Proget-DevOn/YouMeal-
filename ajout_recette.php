@@ -16,7 +16,7 @@ $auteur=$_POST['auteur'];
       echo $sql2;
       if ($donnees=$req2->fetch(PDO::FETCH_ASSOC)){
         //echo $donnees["id_recette"];
-        $dest="ajout_ingredients.php?id_recette=".$donnees["id_recette"]."";
+        $dest="ajout_ingredient.php?id_recette=".$donnees["id_recette"]."";
 
 
 

@@ -21,17 +21,21 @@
 
     }
     ?>
-    <form class="needs-validation"  novalidate action="ajout_ingredient.php" method="post">
+    <form class="needs-validation"  novalidate action="ajout_ingredient" method="post">
       <div class="col-sm-3 mt-4" id="inserer_ing">
         <h2>
           Ingredients
         </h2>
         <label>nombre d'ingredients:</label>
         <var id='nb_ing'>1</var>
-        <input type="hidden" id="id_recette" value="<?php echo $_GET['id_recette'] ?>">
-      <input type="hidden"  id="nb" name="nb" value=""  required/>
+        <input type="hidden" id="id_recette" name="id_recette" value=""required/>
+    <!--  <input type="hidden"  id="nb" name="nb" value=""  required/>-->
+    <div>
+      <input type="hidden"  id="n_ingredient" name="n_ingredient" value=""  required/>
+      <input type="hidden"  id="n_etape" name="n_etape" value=""  required/>
+    </div>
         <div>
-          <input type="text" class="form-control  border-rose-input" name="ingredient"  id="1" placeholder="ingredient" required/>
+          <input type="text" class="form-control  border-rose-input" name="ingredient1"  id="ingredient1" placeholder="ingredient" required/>
         </div>
 
       </div>
@@ -41,9 +45,9 @@
         </h2>
         <label>nombre d'etape:</label>
         <var id='nb_etape'>1</var>
-        <input type="hidden"  id="nb_etap" value=""  required/>
-        <textarea class="form-control mt-4 border-rose-input" name="etape"  id="1" placeholder="etape 1" required/></textarea>
+        <textarea class="form-control mt-4 border-rose-input" name="etape1"  id="etape1" placeholder="etape 1" required/></textarea>
       </div>
+
       <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
     </form>
   </body>
@@ -65,6 +69,23 @@
 	bouton2.addEventListener("click",ajout_etape,false);
 	document.body.appendChild(bouton2);
   bouton2.setAttribute("class","btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5")
+  function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace(
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;
+	}
+	return vars;
+}
+let recette=$_GET('id_recette');
+document.getElementById("id_recette").value = recette;
+
   function ajout_ingredient(){
     click_ing+=1;
     let ingredient= document.createElement("input");
@@ -73,8 +94,7 @@
     ingredient.setAttribute("id","ingredient"+click_ing);
     ingredient.setAttribute("name","ingredient"+click_ing);
     let i =document.getElementById('nb_ing').innerHTML = click_ing;
-
-    document.getElementById("nb").value = click_ing;
+    document.getElementById("n_ingredient").value = click_ing;
 
   }
   function ajout_etape(){
@@ -82,9 +102,10 @@
   let etape= document.createElement("textarea");
     etp.appendChild(etape);
     etape.setAttribute("class","form-control mt-4 border-rose-input");
-    etape.setAttribute("id",click_etape);
+    etape.setAttribute("name","etape"+click_etape);
+    etape.setAttribute("id","etape"+click_etape);
     let i =document.getElementById('nb_etape').innerHTML = click_etape;
-    document.getElementById("nb_etap").value = click_etape;
+    document.getElementById("n_etape").value = click_etape;
   }
   </script>
 

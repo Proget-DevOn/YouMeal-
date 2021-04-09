@@ -27,7 +27,7 @@
         <h1>
           Info recette
         </h1>
-        <input type="text"class="form-control mt-4 border-rose-input"  name="auteur" readonly value= <?php echo $_SESSION['login']?>>
+        <input type="hidden"class="form-control mt-4 border-rose-input"  name="auteur" readonly value= <?php echo $_SESSION['login']?>>
       <input type="text" class="form-control mt-4 border-rose-input"  name="nom_recette" id="nom_recette" placeholder="nom de la recette" required/>
       <label for="cout-select">Temps de réalisation:</label>
       <input type="time" class="form-control mt-1 border-rose-input" name="temps_execution" id="temps_execution"placeholder="temps d'execution" required/>
