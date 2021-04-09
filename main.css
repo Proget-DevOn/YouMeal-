@@ -138,12 +138,10 @@ nav a{
 
 nav ul{
     float: right;
-    margin-right: 20px;
 }
 
 nav ul li{
     display: inline-block;
-    margin: 0 30px;
     line-height: 80px;
 }
 
