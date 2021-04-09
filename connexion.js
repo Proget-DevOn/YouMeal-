@@ -1,8 +1,10 @@
-document.getElementById("buttonconnect").addEventListener("click", myFunction);
+//vérification mot de passe avant submit
 
-function myFunction() {
-    var password = document.getElementById("password").value;
-    if(password==""){
+document.getElementById("form").onsubmit = function(){
+    pass1 = document.getElementById("password").value;
+  
+    if(pass1==""){
         alert("Veuillez renseigner un mot de passe");
+        return false;
     }
 }

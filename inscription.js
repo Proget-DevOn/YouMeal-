@@ -24,3 +24,28 @@ let vide="";
     })
 })()
 })
+
+//vérification mot de passe avant submit
+
+document.getElementById("form").onsubmit = function(){
+  pass1 = document.getElementById("password").value;
+  confirmpass = document.getElementById("password2").value;
+
+  if(pass1==confirmpass){
+    
+    if(pass1.length < 6){
+      alert("Le mot de passe doit être supérieur à 6 caractères")
+      return false;
+    }
+
+    else{
+      return true;
+    }
+    
+  }
+
+  else{
+    alert("Les mots de passe ne correspondent pas");
+    return false;
+  }
+}
