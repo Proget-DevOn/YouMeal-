@@ -1,3 +1,5 @@
+/* Page Accueil*/
+
 *{
     margin: 0;
     padding: 0;
@@ -5,56 +7,6 @@
     list-style: none;
     box-sizing: border-box;
 }
-
-/*Pages connexion et inscription*/
-
-.fond_uni{
-    background-color: #ffe1a5;
-}
-
-.contour_rose{
-    border-color: #d34472;
-    border-radius: 10em;
-}
-
-.bouton_inscription {
-    border-color: #F99170;
-    border-radius: 10em;
-    color: #F99170;
-    padding-left: 4em;
-    padding-right: 4em;
-}
-
-.bouton_seconnecter{
-    border-color: white;
-    border-radius: 10em;
-    color: white;
-    background-color: #F99170;
-    padding-left: 3em;
-    padding-right: 3em;
-}
-
-.mot_de_passe_oublie{
-    color:black;
-    text-decoration: none;
-    font-size: small;
-}
-
-.bouton_sinscrire{
-    border-color: white;
-    border-radius: 10em;
-    color: white;
-    background-color: #F99170;
-    padding-left: 3em;
-    padding-right: 3em;
-}
-
-.logo_inscription{
-    margin-top: 8em;
-}
-
-
-/* Page Accueil*/
 
 .fond_radiant {
     background-image: linear-gradient(to bottom, white, #ffc4b4);
@@ -68,8 +20,8 @@
 
 @font-face {
     font-family: 'monogramregular';
-    src: url('ressources/font/monogram-webfont.woff2') format('woff2'),
-         url('ressources/font/monogram-webfont.woff') format('woff');
+    src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('../ressources/font/monogram-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
