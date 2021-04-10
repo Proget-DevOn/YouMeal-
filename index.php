@@ -125,7 +125,7 @@
         <p><a href="ajouter_recette.php">ajouter une recette</a></p>
       </div>
 
-      <?php $sql='SELECT * FROM recettes';
+      <?php $sql='SELECT * FROM recettes ORDER BY RAND() LIMIT 10;';
       $rep = $conn->query($sql);
       while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
       {
