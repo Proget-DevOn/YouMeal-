@@ -33,7 +33,7 @@
       </div>
 
       <ul>
-          <li><a href="#">MENU1</a></li>
+        <li><a href="profil.php">PROFIL</a></li>
           <li><a href="#">MENU2</a></li>
           <li><a href="deconnexion.php">DECONNEXION</a></li>
       </ul>
