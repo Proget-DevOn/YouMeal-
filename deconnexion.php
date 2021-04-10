@@ -8,6 +8,6 @@ session_destroy();
 unset($_SESSION);
 unset($_COOKIE);
 header("Cache-Control: no-store, no-cache, must-revalidate");
-header('Location:connexion.php');
+header('Location:connexion.html');
 exit;
 ?>
