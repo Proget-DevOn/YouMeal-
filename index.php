@@ -35,7 +35,7 @@
       <ul>
           <li><a href="#">MENU1</a></li>
           <li><a href="#">MENU2</a></li>
-          <li><a href="#">MENU3</a></li>
+          <li><a href="deconnexion.php">DECONNEXION</a></li>
       </ul>
 
       <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
