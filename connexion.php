@@ -2,7 +2,7 @@
 include("config.php");
 include('connexion.html');
 
-if(isset($_POST['pseudo'],$_POST['password'])){
+
 $pseudo=$_POST['pseudo'];
 $password=$_POST['password'];
 $pass=$conn->query("SELECT password FROM utilisateurs WHERE pseudo = '".$pseudo."'");
@@ -19,5 +19,5 @@ if(password_verify($password, $rows[0]['password'])){
         echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
       exit;
       }
-}}
+}
 ?>

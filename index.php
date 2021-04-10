@@ -18,19 +18,20 @@
   </head>
 
   <body class="fond_radiant">
-    
 
     <?php
     session_start();
 
     if(!isset($_SESSION['login']))
     {
-      include('connexion.html');
+      header('Location:connexion.html');
       die('');
+    }else{
+      require ('header.html');
     }
-    else{
-      include('header.html') ;
-    }?>
+    ?>
+
+
 
     <!-- Barre Navigation
 
@@ -104,7 +105,7 @@
         <p><a href="ajouter_recette.php">ajouter une recette</a></p>
       </div>
 
-      <?php $sql='SELECT * FROM recettes ORDER BY RAND() LIMIT 10;';
+      <?php $sql='SELECT * FROM recettes';
       $rep = $conn->query($sql);
       while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
       {
