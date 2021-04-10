@@ -8,10 +8,6 @@
     box-sizing: border-box;
 }
 
-
-
-
-
 @font-face {
     font-family: 'monogramregular';
     src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
@@ -42,6 +38,22 @@ label.logo{
     font-size: xx-large;
     line-height: 80px;
     font-family: 'monogramregular';
+    text-decoration: none;
+}
+
+nav label a{
+    color: #fc9778;
+    text-decoration: none;
+}
+nav label a:hover{
+    text-decoration: none;
+    color:black;
+    transition: .5s;
+}
+
+label.logo:hover{
+    color:black;
+    transition: .5s;
 }
 
 /*Barre de recherche*/
@@ -105,11 +117,6 @@ nav ul li a:hover{
     color:black;
     transition: .5s;
     text-decoration: none;
-}
-
-label.logo:hover{
-    color:black;
-    transition: .5s;
 }
 
 .checkbtn{
