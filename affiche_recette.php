@@ -29,10 +29,11 @@
       include('connexion.html');
       die('');
     }?>
+    <p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>">ajouter un live</a></p>
 <?php
+
 $sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
 $req= $conn->query($sql);
-echo $sql;
 while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 ?>
 <div class="info_recette">
@@ -57,12 +58,13 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 
 
 <div class="etape">
+  <h2>préparation:</h2>
   <?php
   $sql="SELECT * FROM preparation where id_recette='".$_GET['id_recette']."' order by id_etape";
   $req= $conn->query($sql);
   while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   ?>
-  <h4>etape<?php  echo $donnees['id_etape']; ?></h4>
+
   <p><?php  echo $donnees['description_etape']; ?><p>
 </div>
 <div class="chat">
