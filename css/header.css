@@ -89,6 +89,9 @@ label.logo:hover{
     line-height: 30px;
     width: 40px;
 }
+.barre_recherche_btn img{
+    margin-top: -4px;
+}
 
 nav a{
     height: 0;
@@ -170,6 +173,7 @@ nav ul li a:hover{
         left: -100%;
         text-align: center;
         transition: all .5s;
+        z-index: 2;
     }
     nav ul li{
         display: block;
