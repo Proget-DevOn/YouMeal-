@@ -35,7 +35,7 @@
       <ul>
           <li><a href="#">MENU1</a></li>
           <li><a href="#">MENU2</a></li>
-          <li><a href="#">MENU3</a></li>
+          <li><a href="deconnexion.php">MENU3</a></li>
       </ul>
 
       <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
@@ -43,6 +43,9 @@
     </nav>
 
     <?php
+    if(isset($_GET['id_recette']))
+    {
+
     session_start();
     include('config.php');
     global $conn;
@@ -50,11 +53,12 @@
     {
       include('connexion.html');
       die('');
-    }?>
+
+    }
+    ?>
 <?php
 $sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
 $req= $conn->query($sql);
-echo $sql;
 while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 ?>
 <div class="info_recette">
@@ -91,6 +95,22 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 
 </div>
 <?php
+}
+}
+else {
+
+session_start();
+include('config.php');
+global $conn;
+if(!isset($_SESSION['login']))
+{
+  include('connexion.html');
+  die('');
+
+}
+$dest="index.php";
+  echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+
 }
  ?>
 
