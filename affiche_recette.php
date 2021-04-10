@@ -88,7 +88,6 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   $req= $conn->query($sql);
   while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   ?>
-  <h4>etape<?php  echo $donnees['id_etape']; ?></h4>
   <p><?php  echo $donnees['description_etape']; ?><p>
 </div>
 <div class="chat">
