@@ -124,6 +124,11 @@ nav ul li a{
     background-color: transparent;
 }
 
+#btn_deconnexion:hover{
+    color:black;
+    transition: .5s;
+}
+
 nav ul li a:hover{
     color:black;
     transition: .5s;
@@ -171,6 +176,10 @@ nav ul li a:hover{
         margin: 50px 0;
     }
     nav ul li a{
+        font-size: 20px;
+        color: white;
+    }
+    #btn_deconnexion{
         font-size: 20px;
         color: white;
     }
