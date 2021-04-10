@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   `date_recette` date NOT NULL,
   `temps_execution` time NOT NULL,
   `cout` enum('economique','moyen','couteux') NOT NULL,
-  `note` int(11) NOT NULL,
+  `note` int(11),
   `auteur` varchar(20) NOT NULL,
   `categorie` enum('entree','plat','desert','aperitif') NOT NULL,
   `regime` enum('vegan','vegetarien','helthy','autre') NOT NULL,
