@@ -6,11 +6,29 @@
     box-sizing: border-box;
 }
 
-/*Pages connexion et inscription*/
+@font-face {
+    font-family: 'monogramregular';
+    src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('../ressources/font/monogram-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.police_monogram{
+    font-family: 'monogramregular';
+    color: #fc9778;
+}
 
 .fond_uni{
     background-color: #ffe1a5;
 }
+
+.fond_radiant {
+    background-image: linear-gradient(to bottom, white, #ffc4b4);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    height: 100%;
+  }
 
 .contour_rose{
     border-color: #d34472;

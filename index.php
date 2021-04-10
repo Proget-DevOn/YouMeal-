@@ -18,9 +18,7 @@
   </head>
 
   <body class="fond_radiant">
-  <?php
-    require ('header.html');
-  ?>
+  <?php require ('header.html');?>
 
     <?php
     session_start();

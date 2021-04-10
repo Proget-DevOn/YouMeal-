@@ -8,12 +8,6 @@
     box-sizing: border-box;
 }
 
-.fond_radiant {
-    background-image: linear-gradient(to bottom, white, #ffc4b4);
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    height: 100%;
-  }
 
 
 
@@ -40,6 +34,7 @@ nav{
     height: 80px;
     display: flex;
     justify-content: space-evenly;
+    border-bottom: 3px solid lightgray;
 }
 
 label.logo{
