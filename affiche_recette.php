@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -18,34 +18,9 @@
   </head>
 
   <body class="fond_radiant">
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">YouMeal</label>
-
-      <div class="barre_recherche_div">
-        <form  method="GET" action="">
-          <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
-          <input class="barre_recherche_input" type="text" name="recherche">
-        </form>
-      </div>
-
-      <ul>
-          <li><a href="profil.php">PROFIL</a></li>
-          <li><a href="#">MENU2</a></li>
-          <li><a href="deconnexion.php">DECONNEXION</a></li>
-      </ul>
-
-      <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
-
-    </nav>
+    <?php require ('header.html');?>
 
     <?php
-    if(isset($_GET['id_recette']))
-    {
-
     session_start();
     include('config.php');
     global $conn;
@@ -53,12 +28,11 @@
     {
       include('connexion.html');
       die('');
-
-    }
-    ?>
+    }?>
 <?php
 $sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
 $req= $conn->query($sql);
+echo $sql;
 while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 ?>
 <div class="info_recette">
@@ -68,7 +42,6 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
   <?php
 }?>
-<p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/play.png" alt="live"></a></p>
 </div>
 <div class="ingredients">
   <h2>ingredients:</h2>
@@ -89,28 +62,13 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   $req= $conn->query($sql);
   while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   ?>
+  <h4>etape<?php  echo $donnees['id_etape']; ?></h4>
   <p><?php  echo $donnees['description_etape']; ?><p>
 </div>
 <div class="chat">
 
 </div>
 <?php
-}
-}
-else {
-
-session_start();
-include('config.php');
-global $conn;
-if(!isset($_SESSION['login']))
-{
-  include('connexion.html');
-  die('');
-
-}
-$dest="index.php";
-  echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
-
 }
  ?>
 
