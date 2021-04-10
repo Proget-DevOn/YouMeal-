@@ -70,3 +70,20 @@
 .logo_inscription{
     margin-top: 8em;
 }
+
+/*thank page*/
+.progress-ring__circle {
+    display: block;
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+#ring{
+    margin-top: 20px;
+}
+#circle{
+    top: 10px;
+    left: 10px;
+    width: 80px;
+}
