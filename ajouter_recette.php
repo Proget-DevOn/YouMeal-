@@ -28,29 +28,29 @@
           Info recette
         </h1>
         <input type="hidden"class="form-control mt-4 border-rose-input"  name="auteur" readonly value= <?php echo $_SESSION['login']?>>
-      <input type="text" class="form-control mt-4 border-rose-input"  name="nom_recette" id="nom_recette" placeholder="nom de la recette" required/>
-      <label for="cout-select">Temps de réalisation:</label>
-      <input type="time" class="form-control mt-1 border-rose-input" name="temps_execution" id="temps_execution"placeholder="temps d'execution" required/>
-      <select name="cout" class="form-control mt-4 border-rose-input"  id="cout">
+        <input type="text" class="form-control mt-4 border-rose-input"  name="nom_recette" id="nom_recette" placeholder="nom de la recette" required/>
+        <label for="cout-select">Temps de réalisation:</label>
+        <input type="time" class="form-control mt-1 border-rose-input" name="temps_execution" id="temps_execution"placeholder="temps d'execution" required/>
+        <select name="cout" class="form-control mt-4 border-rose-input"  id="cout">
           <option value="">quel est le cout </option>
           <option value="economique">économique</option>
           <option value="moyen">moyen</option>
           <option value="couteux">couteux</option>
-      </select>
-      <select name="categorie" class="form-control mt-4 border-rose-input"  id="categorie">
+        </select>
+        <select name="categorie" class="form-control mt-4 border-rose-input"  id="categorie">
           <option value="">quel est la categorie </option>
           <option value="entree">entrée</option>
           <option value="plat">plat</option>
           <option value="desert">desert</option>
           <option value="aperitif">apéritif</option>
-      </select>
-      <select name="regime" class="form-control mt-4 border-rose-input"  id="regime">
+       </select>
+        <select name="regime" class="form-control mt-4 border-rose-input"  id="regime">
           <option value="">regime alimantaire </option>
           <option value="helthy">helthy</option>
           <option value="vegetarien">vegetarien</option>
           <option value="vegan">vegan</option>
           <option value="autre">autre</option>
-      </select>
+        </select>
       </div>
       <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
     </form>
