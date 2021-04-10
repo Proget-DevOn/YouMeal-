@@ -33,7 +33,7 @@
       </div>
 
       <ul>
-          <li><a href="profil.php">PROFIL</a></li>
+        <li><a href="profil.php">PROFIL</a></li>
           <li><a href="#">MENU2</a></li>
           <li><a href="deconnexion.php">DECONNEXION</a></li>
       </ul>
@@ -43,75 +43,21 @@
     </nav>
 
     <?php
-    if(isset($_GET['id_recette']))
-    {
-
     session_start();
-    include('config.php');
-    global $conn;
+
     if(!isset($_SESSION['login']))
     {
       include('connexion.html');
       die('');
-
-    }
-    ?>
-<?php
-$sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
-$req= $conn->query($sql);
-while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
-?>
-<div class="info_recette">
-  <h3><?php echo $donnees['nom_recette'];?></h3>
-  <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="200" height="200">
-  <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
-  <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
-  <?php
-}?>
-<p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/play.png" alt="live"></a></p>
-</div>
-<div class="ingredients">
-  <h2>ingredients:</h2>
-  <?php
-    $sql="SELECT * FROM ingredients where id_recette='".$_GET['id_recette']."'";
-    $req= $conn->query($sql);
-    while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
-    ?>
-<strong><?php  echo $donnees['nom_ingredient']; ?></strong>
-</div>
-<?php
-} ?>
+    }?>
+    <h1>programation d'un live</h1>
+    <p></p>
+    <form class="needs-validation" enctype="multipart/form-data" novalidate action="ajout_recette.php" method="post">
+    <input type="datetime-local" class="form-control mt-1 border-rose-input"id="date_live" name="date_live" placeholder="date de la diffusion"/>
+    <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
 
 
-<div class="etape">
-  <?php
-  $sql="SELECT * FROM preparation where id_recette='".$_GET['id_recette']."' order by id_etape";
-  $req= $conn->query($sql);
-  while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
-  ?>
-  <p><?php  echo $donnees['description_etape']; ?><p>
-</div>
-<div class="chat">
+    </form>
 
-</div>
-<?php
-}
-}
-else {
-
-session_start();
-include('config.php');
-global $conn;
-if(!isset($_SESSION['login']))
-{
-  include('connexion.html');
-  die('');
-
-}
-$dest="index.php";
-  echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
-
-}
- ?>
-
-</html>
+    </body>
+    </html>

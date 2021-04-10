@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
@@ -92,9 +95,10 @@ else {
 
 ?>
 <!--formulaire depliant avec bootstrap-->
-<button type="button" class="btn btn-success" data-toggle="collapse">modifier</button><br/>
-<div id="profil" class="collapse"> <?php
-include("upload_profil.php");?>
+<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#profil">modifier</button><br/>
+<div id="profil" class="collapse">
+  <?php
+include("upload-profil.php");?>
     <form enctype="multipart/form-data" action="" method="POST">
     	  <p>
     		<textarea name="bio" rows="8" cols="45" placeholder="bio" required /></textarea>
@@ -102,8 +106,9 @@ include("upload_profil.php");?>
 
     	  <p><input type="submit" value="OK"></p>
         </form>
-      </div>
-        <?php if (isset($_POST['prenom']))
+        </div>
+
+        <?php if (isset($_POST['bio']))
         {
           include("config.php");
           $rep=$conn->query("SELECT * from utilisateurs where pseudo='".$_SESSION['login']."'");
@@ -113,8 +118,17 @@ include("upload_profil.php");?>
             $req=$conn->query($sql);
             $sql="UPDATE profil SET bio='".$_POST['interet']."' WHERE pseudo='".$_SESSION['login']."'";
             $req=$conn->query($sql);
+
             $dest="profil.php";
              echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+           }
+           else {
+
+             echo "erreur est survenue";
+             $dest="page.php";
+              echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
+           }
+         }
              $rep=$conn->query("SELECT * from abonnement where pseudo_abonne='".$_SESSION['login']."'");
              if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
 
@@ -123,17 +137,8 @@ include("upload_profil.php");?>
              if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
 
              }
-
-
           }
-          else {
 
-            echo "erreur est survenue";
-            $dest="page.php";
-             echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
-          }
-          }
-        }
 
 
  ?>
