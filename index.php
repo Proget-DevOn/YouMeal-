@@ -18,29 +18,9 @@
   </head>
 
   <body class="fond_radiant">
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">YouMeal</label>
-
-      <div class="barre_recherche_div">
-        <form  method="GET" action="">
-          <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
-          <input class="barre_recherche_input" type="text" name="recherche">
-        </form>
-      </div>
-
-      <ul>
-          <li><a href="#">MENU1</a></li>
-          <li><a href="#">MENU2</a></li>
-          <li><a href="#">MENU3</a></li>
-      </ul>
-
-      <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
-
-    </nav>
+  <?php
+    require ('header.html');
+  ?>
 
     <?php
     session_start();
