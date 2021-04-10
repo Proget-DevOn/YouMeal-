@@ -148,6 +148,9 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   UNIQUE KEY `auteur` (`auteur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+ALTER TABLE recettes
+ADD FOREIGN KEY (auteur) REFERENCES utilisateurs(pseudo);
+
 -- --------------------------------------------------------
 
 --
