@@ -115,7 +115,7 @@
     <div class="row">
       <div class="col-sm-4">
         <h3><a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>"><?php echo $donnees['nom_recette'];?></a></h3>
-        <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>"><img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="200" height="200"></a>
+        <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>"><img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200"></a>
         <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
         <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
       </div>

@@ -29,22 +29,23 @@
       include('connexion.html');
       die('');
     }?>
+    <p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>">ajouter un live</a></p>
 <?php
+
 $sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
 $req= $conn->query($sql);
-echo $sql;
 while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 ?>
 <div class="info_recette">
   <h3><?php echo $donnees['nom_recette'];?></h3>
-  <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="200" height="200">
-  <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
+  <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200">
+  <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouté par <?php  echo $donnees['auteur'];?></a></p>
   <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
   <?php
 }?>
 </div>
 <div class="ingredients">
-  <h2>ingredients:</h2>
+  <h4>Ingredients:</h4>
   <?php
     $sql="SELECT * FROM ingredients where id_recette='".$_GET['id_recette']."'";
     $req= $conn->query($sql);
@@ -57,12 +58,13 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 
 
 <div class="etape">
+  <h4>Préparation:</h4>
   <?php
   $sql="SELECT * FROM preparation where id_recette='".$_GET['id_recette']."' order by id_etape";
   $req= $conn->query($sql);
   while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
   ?>
-  <h4>etape<?php  echo $donnees['id_etape']; ?></h4>
+
   <p><?php  echo $donnees['description_etape']; ?><p>
 </div>
 <div class="chat">
