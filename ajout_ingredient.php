@@ -30,11 +30,11 @@ if(count($_POST)>0){
 for ($e=1; $e <$nb_etape ; $e++) {
 
       $valeur=${"etape".$e};
-      $sql2 = "INSERT INTO preparation(id_etape,id_recette,description_etape) VALUES ('".$e."','".$id_recette."','".$valeur."')";
+      $sql2 = "INSERT INTO preparation(id_recette,description_etape) VALUES ('".$id_recette."','".$valeur."')";
       if(  $req2=$conn->query($sql2)==TRUE)
         {
-            echo $sql2;
-          echo "reussi";
+          $dest="index.php";
+            echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
     }
     else{
     echo $sql2;
