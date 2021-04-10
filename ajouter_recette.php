@@ -49,7 +49,7 @@
     {
       include('connexion.html');
       die('');
-    }?>
+    }
 
 
     include("upload.php");?>
