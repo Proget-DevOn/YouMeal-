@@ -31,37 +31,6 @@
     }
     ?>
 
-
-
-    <!-- Barre Navigation
-
-    <div class="container">
-      <div class="row justify-content-center align-items-center mt-5">
-
-        <div class="col-3 text-center">
-          <img src="ressources/bouton_menu.png" alt="">
-        </div>
-
-        <div class="col-6 text-center">
-          <form  method="GET" action="">
-            <div class="barre_recherche_div">
-              <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
-              <input class="barre_recherche_input" type="text" name="recherche">
-            </div>
-          </form>
-        </div>
-
-        <div class="col-3 text-center">
-          <img src="ressources/messagerie.png" alt="messages">
-        </div>
-
-      </div>
-    </div>
-
-    -->
-
-
-
     <?php
       include('config.php');
       global $conn;
@@ -100,10 +69,10 @@
       <?php
       echo htmlspecialchars($_SESSION['login']);?> !</h1>
       <p class="mx-5 bolt"><strong>Qu'est-ce qu'on prépare aujourd'hui?</strong></p>
-
+<!-- 
       <div class="text-center mt-5">
         <p><a href="ajouter_recette.php">ajouter une recette</a></p>
-      </div>
+      </div> -->
 
       <?php $sql='SELECT * FROM recettes';
       $rep = $conn->query($sql);
@@ -116,7 +85,7 @@
       <div class="col-sm-4">
         <h3><a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>"><?php echo $donnees['nom_recette'];?></a></h3>
         <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>"><img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200"></a>
-        <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouter par <?php  echo $donnees['auteur'];?></a></p>
+        <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouté par <?php  echo $donnees['auteur'];?></a></p>
         <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
       </div>
 
