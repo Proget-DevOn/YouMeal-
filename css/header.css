@@ -113,6 +113,17 @@ nav ul li a{
     margin-right: 30px;
 }
 
+#btn_deconnexion{
+    color: #fc9778;
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+    line-height: 80px;
+    text-decoration: none;
+    margin-right: 30px;
+    border: none;
+    background-color: transparent;
+}
+
 nav ul li a:hover{
     color:black;
     transition: .5s;

@@ -18,16 +18,18 @@
   </head>
 
   <body class="fond_radiant">
-  <?php require ('header.html');?>
 
     <?php
     session_start();
 
     if(!isset($_SESSION['login']))
     {
-      include('connexion.html');
+      header('Location:connexion.html');
       die('');
-    }?>
+    }else{
+      require ('header.html');
+    }
+    ?>
 
 
 
