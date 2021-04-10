@@ -18,22 +18,18 @@
 
     if(!isset($_SESSION['login']))
     {
-
       include('connexion.html');
       die('');
-
     }?>
     <?php require ('header.html');?>
     <div class="row justify-content-center">
       <div class="col-6 col-md-4 text-center">
 
-        
-        <form class="needs-validation" enctype="multipart/form-data" novalidate action="ajout_recette.php" method="post">
-          <div>
-            <h1 class="police_monogram mt-5 mb-5">
-              Ajouter une recette
-            </h1>
-            <?php include("upload.php");?>
+          <h1 class="police_monogram mt-5 mb-5">
+            Ajouter une recette
+          </h1>
+          <?php include("upload.php");?>
+          <form class="needs-validation" enctype="multipart/form-data" novalidate action="ajout_recette.php" method="post">
             <input type="text"class="form-control mt-4 contour_rose"  name="image" readonly placeholder="image" style="display:none"value= <?php echo $images?>>
             <input type="hidden"class="form-control mt-4 contour_rose"  name="auteur" readonly value= <?php echo $_SESSION['login']?>>
             <input type="text" class="form-control mt-5 contour_rose"  name="nom_recette" id="nom_recette" placeholder="Nom de la recette" required/>
@@ -61,9 +57,8 @@
               <option value="vegan">Vegan</option>
               <option value="autre">Autre</option>
             </select>
-          </div>
-          <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
-        </form>
+            <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
+          </form>
 
       </div>
     </div>
