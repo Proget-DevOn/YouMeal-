@@ -39,6 +39,8 @@
     border-radius: 0 20px;
     margin-left: 20px;
     position: relative;
+    margin-top: 20px;
+    float:left;
 }
 
 .nom_recette{
@@ -65,4 +67,10 @@
     bottom: -16px;
     left: 15px;
     font-size: 13px;
+}
+
+.colonnes{
+    
+    /* background-color: black;
+    column-count: 2; */
 }

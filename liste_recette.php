@@ -70,12 +70,13 @@
           <p><a href="ajouter_recette.php">Ajouter une recette</a></p>
         </div>
 
+        <div class="colonnes">
         <?php $sql='SELECT * FROM recettes';
         $rep = $conn->query($sql);
         while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
         {
           ?>
-          <div class="mt-5 div_recette" style="background-image: url('image/image_recettes/<?php  echo $donnees['image']; ?>');">
+          <div class="div_recette" style="background-image: url('image/image_recettes/<?php  echo $donnees['image']; ?>');">
             <a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>" class="auteur_recette"><?php  echo $donnees['auteur'];?></a><br>
             <!-- <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
               <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200">
@@ -89,6 +90,7 @@
           <?php
         }
           ?>
+        </div>
 
         <?php
       }
