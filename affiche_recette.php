@@ -79,9 +79,12 @@
         $req= $conn->query($sql);
         $cpt = 1;
         while($donnees = $req->fetch(PDO::FETCH_ASSOC))
-        {
-           ?><strong>Etape <?php echo $cpt;?>:</strong>
-          
+        { ?>
+          <?php if(!empty($donnees['description_etape']))
+                {?>
+                  <strong>Etape <?php echo $cpt;?>:</strong>
+                  <?php 
+                } ?>
           <p><?php  echo $donnees['description_etape']; ?><p>
           <div class="chat">
           </div>
