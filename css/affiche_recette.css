@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'monogramregular';
+    src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('../ressources/font/monogram-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.police_monogram{
+    font-family: 'monogramregular';
+    color: #fc9778;
+}
+
+.fond_uni{
+    background-color: #ffe1a5;
+}
+
+.fond_radiant {
+    background-image: linear-gradient(to bottom, white, #fae381);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    height: 100%;
+}
+
+.div_recette{
+    margin: 3em;
+}
+
+.top_recette{
+    width: fit-content;
+    display: inline-block;
+}
+
+.infos_recette{
+    width: fit-content;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.titre_recette{
+    font-size: 50px;
+}
+
+.div_image{
+    background-color: black;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.div_image a{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    padding-left: 110px;
+    background-color: #ffcc3c;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.image{
+    border-top-right-radius: 30px;
+}
+
+.photo_profil{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: white;
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 1px solid #ffcc3c;
+    position: absolute;
+    bottom: -45px;
+    left: 20px;
+    z-index: 2;
+}
+
+.une_info{
+    margin: 0;
+    padding: 0;
+}
+
+.ingredients{
+    margin: 20px 0;
+    background-color: #ffcc94;
+    width: fit-content;
+}
