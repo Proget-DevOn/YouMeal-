@@ -30,25 +30,49 @@
     height: 100%;
 }
 
+.lien_ajout_recette{
+    font-size: 30px;
+    text-decoration: none;
+}
+.lien_ajout_recette:hover{
+    font-size: 30px;
+    text-decoration: none;
+    color:black;
+}
+
 .div_recette{
     width: 300px;
-    background-color: rgb(255, 200, 20);
-    background-size: contain;
+    background-color: #ffcc3c;
+    background-size:contain;
     background-repeat: no-repeat;
     height: 200px;
     border-radius: 0 20px;
     margin-left: 20px;
     position: relative;
     margin-top: 20px;
-    float:left;
+    float: left;
+}
+
+.div_recette:hover{
+    transform: scale(1.1);
 }
 
 .nom_recette{
     position: absolute;
-    bottom: 10px;
-    left: 15px;
+    bottom: 0;
+    padding-left: 15px;
+    padding-bottom: 15px;
     text-decoration: none;
     color: black;
+    background-color: #ffcc3c;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+}
+
+.nom_recette:hover{
+    text-decoration: none;
+    color: grey;
+    transition: .5s;
 }
 
 .auteur_recette{
@@ -60,6 +84,12 @@
     margin: 10px;
     position: absolute;
     top: 5px;
+}
+
+.auteur_recette:hover{
+    text-decoration: none;
+    color: black;
+    transition: .5s;
 }
 
 .categorie_recette{

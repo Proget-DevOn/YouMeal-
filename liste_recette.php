@@ -67,7 +67,7 @@
         ?>
 
         <div class="text-center mt-5">
-          <p><a href="ajouter_recette.php">Ajouter une recette</a></p>
+          <p><a class="lien_ajout_recette police_monogram" href="ajouter_recette.php">Ajouter une recette</a></p>
         </div>
 
         <div class="colonnes">
