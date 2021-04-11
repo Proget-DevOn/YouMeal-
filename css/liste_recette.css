@@ -47,10 +47,9 @@
     background-repeat: no-repeat;
     height: 200px;
     border-radius: 0 20px;
-    margin-left: 20px;
     position: relative;
-    margin-top: 20px;
-    float: left;
+    margin: 20px 20px;
+    display: inline-block;
 }
 
 .div_recette:hover{
@@ -94,13 +93,14 @@
 
 .categorie_recette{
     position: absolute;
-    bottom: -16px;
+    bottom: -14px;
     left: 15px;
     font-size: 13px;
 }
 
 .colonnes{
-    
-    /* background-color: black;
-    column-count: 2; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 96%;
 }
