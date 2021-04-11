@@ -28,7 +28,7 @@
     {
       include('connexion.html');
       die('');
-    }?>
+    } if(isset( $_GET['id_recette'])){?>
     <p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>">ajouter un live</a></p>
 <?php
 
@@ -71,6 +71,14 @@ while($donnees = $req->fetch(PDO::FETCH_ASSOC)){
 
 </div>
 <?php
+}
+}
+else {
+  $dest="liste_recette.php";
+
+
+
+ echo '<script language="JavaScript">window.location=\'' . $dest.'\'</script>';
 }
  ?>
 
