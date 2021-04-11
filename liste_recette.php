@@ -34,34 +34,34 @@
       include('config.php');
       global $conn;
       if(isset($_GET['recherche']))
-      {
-        $sql="SELECT * from recettes WHERE
-        nom_recette LIKE '%".$_GET['recherche']."%'
-        OR auteur LIKE '%".$_GET['recherche']."%'
-        OR  regime like '%".$_GET['recherche']."%'
-        OR categorie like '%".$_GET['recherche']."%'";
-        $rep = $conn->query($sql);
-        while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
-        {
-          ?>
+      { ?>
 
+        <div class="colonnes justify-content-center">
 
-          <div class="row">
-            <div class="col-sm--3">
-              <h3>
-                <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
-                  <?php echo $donnees['nom_recette'];?>
-                </a>
-              </h3>
-              <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
+          <?php $sql="SELECT * from recettes WHERE
+          nom_recette LIKE '%".$_GET['recherche']."%'
+          OR auteur LIKE '%".$_GET['recherche']."%'
+          OR  regime like '%".$_GET['recherche']."%'
+          OR categorie like '%".$_GET['recherche']."%'";
+          $rep = $conn->query($sql);
+          while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
+          {
+            ?>
+            <div class="div_recette" style="background-image: url('image/image_recettes/<?php  echo $donnees['image']; ?>');">
+              <a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>" class="auteur_recette"><?php  echo $donnees['auteur'];?></a><br>
+              <!-- <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
                 <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200">
-              </a>
-              <p><a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">ajouté par <?php  echo $donnees['auteur'];?></a></p>
-              <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p>
+              </a> -->
+              <strong><a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>" class="nom_recette">
+                <?php echo $donnees['nom_recette'];?>
+              </a></strong>
+              <p class="categorie_recette"><?php echo $donnees['categorie']; ?></p>
+              <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p> -->
             </div>
-          </div>
-          <?php
-        }
+            <?php
+          } ?>
+        </div>
+        <?php
       }else
       {
         ?>

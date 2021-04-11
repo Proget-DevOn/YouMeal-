@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/liste_recette.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -73,6 +73,24 @@
       <div class="text-center mt-5">
         <p><a href="ajouter_recette.php">ajouter une recette</a></p>
       </div> -->
+      <div class="container_categorie">
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=aperitif"><div class="cercle" style="background-image: url('ressources/images/categorie_aperitif.jpg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=aperitif">Apéritif</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=entree"><div class="cercle" style="background-image: url('ressources/images/categorie_entree.jpg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=entree">Entrée</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=plat"><div class="cercle" style="background-image: url('ressources/images/categorie_plat.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plat</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Dessert</a>
+        </div>
+      </div>
 
       <div class="colonnes justify-content-center">
           <?php $sql='SELECT * FROM recettes';
