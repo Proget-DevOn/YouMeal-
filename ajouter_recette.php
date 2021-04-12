@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 
-    <title>ajout recette</title>
+    <title>Ajout recette</title>
   </head>
   <body class="fond_radiant">
     <?php
@@ -52,10 +52,11 @@
 
             <select name="regime" class="form-control mt-4 contour_rose"  id="regime">
               <option value="">Régime alimentaire</option>
-              <option value="helthy">Helthy</option>
+              <option value="helthy">Healthy</option>
               <option value="vegetarien">Végétarien</option>
               <option value="vegan">Vegan</option>
               <option value="autre">Autre</option>
+              
             </select>
             <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
           </form>

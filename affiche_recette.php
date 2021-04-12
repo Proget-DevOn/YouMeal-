@@ -50,7 +50,7 @@
         </div>
         <div class="infos_recette">
           <p class="une_info">Coût: <?php echo $donnees['cout']; ?></p>
-          <p class="une_info">Temps de realisation: <?php  echo $donnees['temps_execution'];?> heures</p>
+          <p class="une_info">Temps de réalisation: <?php  echo $donnees['temps_execution'];?> heures</p>
           <p class="une_info">Régime: <?php  echo $donnees['regime'];?></p>
           <p class="une_info">Note: <?php  echo $donnees['note'];?></p>
         </div>
@@ -58,7 +58,7 @@
       }?>
       
       <div class="ingredients">
-        <h4>Ingredients</h4>
+        <h4>Ingrédients</h4>
         <?php
           $sql="SELECT * FROM ingredients where id_recette='".$_GET['id_recette']."'";
           $req= $conn->query($sql);

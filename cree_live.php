@@ -17,8 +17,31 @@
 
     <title>YouMeal</title>
   </head>
-  <?php require ('header.html');?>
+
   <body class="fond_radiant">
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">YouMeal</label>
+
+      <div class="barre_recherche_div">
+        <form  method="GET" action="">
+          <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
+          <input class="barre_recherche_input" type="text" name="recherche">
+        </form>
+      </div>
+
+      <ul>
+        <li><a href="profil.php">PROFIL</a></li>
+          <li><a href="#">MENU2</a></li>
+          <li><a href="deconnexion.php">DECONNEXION</a></li>
+      </ul>
+
+      <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
+
+    </nav>
 
     <?php
     session_start();
@@ -35,9 +58,9 @@
       <input type="hidden" id="hote" name="hote" value="<?php  echo $_SESSION['login']; ?>"required/>
     <input type="datetime-local" class="form-control mt-1 border-rose-input"id="date_live" name="date_live" placeholder="date de la diffusion"/>
     <select name="statut" class="form-control mt-4 border-rose-input"  id="statut">
-        <option value="">privé ou public </option>
-        <option value="public">public</option>
-        <option value="prive">privé</option>
+        <option value="">Privé ou public </option>
+        <option value="public">Public</option>
+        <option value="prive">Privé</option>
     </select>
 
     <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>

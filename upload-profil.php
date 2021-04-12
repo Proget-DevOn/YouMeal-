@@ -1,5 +1,5 @@
 <form enctype="multipart/form-data" action="" method="POST">
-  <p>charger votre fichier</p>
+  <p>Charger votre fichier</p>
 <input type="file" name="image"></input>
   <input type="submit" value="charger"></input>
 </form>
@@ -22,13 +22,13 @@ if(!isset($erreur))
     $path = "image/profil/";
     $path = $path . basename( $_FILES['image']['name']);
     if(move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
-      echo "le document ".  basename( $_FILES['image']['name']).
-      " a ete envoyer";
+      echo "Le document ".  basename( $_FILES['image']['name']).
+      " a bien été envoyé";
       $images=$_FILES['image']['name'];
 
     }
     else{
-      echo " une erreur a eu lieu lors de l'envoi";
+      echo "Une erreur a eu lieu lors de l'envoi";
     }
 
   }

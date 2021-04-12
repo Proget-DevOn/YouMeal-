@@ -16,7 +16,7 @@ $hote=$_POST['hote'];
 }
 else{
   echo $sql;
-  echo "il faut remplir tout les champs";
+  echo "Il faut remplir tout les champs";
 include('cree_live.php');
 }
 ?>

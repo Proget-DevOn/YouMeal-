@@ -39,7 +39,7 @@
         <h2>
           Ingredients
         </h2>
-        <label>nombre d'ingredients:</label>
+        <label>Nombre d'ingrédients:</label>
         <var id='nb_ing'>1</var>
         <input type="hidden" id="id_recette" name="id_recette" value=""required/>
     <!--  <input type="hidden"  id="nb" name="nb" value=""  required/>-->
@@ -56,9 +56,9 @@
         <h2 class="form--header-title">
           Etape de la recette
         </h2>
-        <label>nombre d'etape:</label>
+        <label>Nombre d'etape:</label>
         <var id='nb_etape'>1</var>
-        <textarea class="form-control mt-4 border-rose-input" name="etape1"  id="etape1" placeholder="etape 1" required/></textarea>
+        <textarea class="form-control mt-4 border-rose-input" name="etape1"  id="etape1" placeholder="etape 1" required></textarea>
       </div>
 
       <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
