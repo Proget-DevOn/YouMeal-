@@ -59,7 +59,7 @@
                 <?php echo $donnees['nom_recette'];?>
               </a></strong>
               <p class="categorie_recette"><?php echo $donnees['categorie']; ?></p>
-              <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p> -->
+              <!-- <p><?php echo $donnees['cout']; ?> Temps de réalisation:<?php  echo $donnees['temps_execution']; ?> Régime:<?php  echo $donnees['regime']; ?> Miam<?php  echo $donnees['note']; ?> </p> -->
             </div>
 
 
@@ -73,7 +73,7 @@
       }
       else {
       ?>
-      <h1 class="police_monogram mx-5 mt-5">Hello
+      <h1 class="police_monogram mx-5 mt-5" style="text-transform: capitalize;">Hello
       <?php
       echo htmlspecialchars($_SESSION['login']);?> !</h1>
       <p class="mx-5 bolt"><strong>Qu'est-ce qu'on prépare aujourd'hui?</strong></p>

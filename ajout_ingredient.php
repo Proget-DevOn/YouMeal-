@@ -24,7 +24,7 @@ if(count($_POST)>0){
         }
         else{
         echo $sql;
-        echo "il faut remplir tout les champs";
+        echo "Il faut remplir tout les champs";
         }
       }
 for ($e=1; $e <$nb_etape ; $e++) {
@@ -38,7 +38,7 @@ for ($e=1; $e <$nb_etape ; $e++) {
     }
     else{
     echo $sql2;
-    echo "il faut remplir tout les champs";
+    echo "Il faut remplir tout les champs";
     }
 
 

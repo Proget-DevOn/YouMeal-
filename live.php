@@ -70,5 +70,5 @@
       }
     </script>
 
-    <body><div id="meet" /></body>
+    <body><div id="meet"></body>
     </html>

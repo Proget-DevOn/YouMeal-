@@ -87,7 +87,7 @@
                 <?php echo $donnees['nom_recette'];?>
               </a></strong>
               <p class="categorie_recette"><?php echo $donnees['categorie']; ?></p>
-              <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p> -->
+              <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> Régime:<?php  echo $donnees['regime']; ?> Miam<?php  echo $donnees['note']; ?> </p> -->
             </div>
             <?php
           }

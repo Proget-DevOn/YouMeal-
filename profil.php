@@ -63,11 +63,11 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 {
   if( $donnees['pseudo']==$_GET['pseudo'])
   {
-    ?><h2>profil de <?php echo $donnees['pseudo'];?></h2>
+    ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
     <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
-    <p>nom: <?php echo $donnees['nom'];?></p><?php
-    ?><p>prenom: <?php echo $donnees['prenom'];?></p>
-  <p>bio: <?php echo $donnees['bio'];?></p><?php
+    <p>Nom: <?php echo $donnees['nom'];?></p><?php
+    ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
+  <p>Bio: <?php echo $donnees['bio'];?></p><?php
 }
 }?>
 <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
@@ -80,23 +80,23 @@ else {
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
-     ?><h2>profil de <?php echo $donnees['pseudo'];?></h2>
+     ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
      <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
-     <p>nom: <?php echo $donnees['nom'];?></p><?php
-     ?><p>prenom: <?php echo $donnees['prenom'];?></p>
-   <p>bio: <?php echo $donnees['bio'];?></p><?php
+     <p>Nom: <?php echo $donnees['nom'];?></p><?php
+     ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
+   <p>Bio: <?php echo $donnees['bio'];?></p><?php
   }
  }
 
 
 ?>
 <!--formulaire depliant avec bootstrap-->
-<button type="button" class="btn btn-success" data-toggle="collapse">modifier</button><br/>
+<button type="button" class="btn btn-success" data-toggle="collapse">Modifier</button><br/>
 <div id="profil" class="collapse"> <?php
 include("upload_profil.php");?>
     <form enctype="multipart/form-data" action="" method="POST">
     	  <p>
-    		<textarea name="bio" rows="8" cols="45" placeholder="bio" required /></textarea>
+    		<textarea name="bio" rows="8" cols="45" placeholder="bio" required></textarea>
     	</p>
 
     	  <p><input type="submit" value="OK"></p>
@@ -126,7 +126,7 @@ include("upload_profil.php");?>
           }
           else {
 
-            echo "erreur est survenue";
+            echo "Une erreur est survenue";
             $dest="page.php";
              echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
           }

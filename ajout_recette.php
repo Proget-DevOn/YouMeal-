@@ -25,7 +25,7 @@ $auteur=$_POST['auteur'];
 }
 else{
   echo $sql;
-  echo "il faut remplir tout les champs";
+  echo "Il faut remplir tout les champs";
 include('ajouter_recette.php');
 }
 ?>

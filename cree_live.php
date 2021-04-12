@@ -58,9 +58,9 @@
       <input type="hidden" id="hote" name="hote" value="<?php  echo $_SESSION['login']; ?>"required/>
     <input type="datetime-local" class="form-control mt-1 border-rose-input"id="date_live" name="date_live" placeholder="date de la diffusion"/>
     <select name="statut" class="form-control mt-4 border-rose-input"  id="statut">
-        <option value="">privé ou public </option>
-        <option value="public">public</option>
-        <option value="prive">privé</option>
+        <option value="">Privé ou public </option>
+        <option value="public">Public</option>
+        <option value="prive">Privé</option>
     </select>
 
     <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
