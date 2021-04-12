@@ -35,53 +35,54 @@
   echo '<script language="JavaScript">window.location=\'' . $dest.'\'</script>';
 } ?>
     <form class="needs-validation"  novalidate action="ajout_ingredient" method="post">
-      <div class="col-sm-3 mt-4" id="inserer_ing">
-        <h2>
-          Ingredients
-        </h2>
-        <label>Nombre d'ingrédients:</label>
-        <var id='nb_ing'>1</var>
-        <input type="hidden" id="id_recette" name="id_recette" value=""required/>
-    <!--  <input type="hidden"  id="nb" name="nb" value=""  required/>-->
-    <div>
-      <input type="hidden"  id="n_ingredient" name="n_ingredient" value=""  required/>
-      <input type="hidden"  id="n_etape" name="n_etape" value=""  required/>
-    </div>
-        <div>
-          <input type="text" class="form-control  border-rose-input" name="ingredient1"  id="ingredient1" placeholder="ingredient" required/>
+      <div class="row justify-content-center mt-5">
+
+        <div class="col-4 col-md-4 text-center" id="inserer_ing">
+          <h2>
+            Ingredients
+          </h2>
+          <label>Nombre d'ingrédients:</label>
+          <var id='nb_ing'>1</var>
+          <input type="hidden" id="id_recette" name="id_recette" value=""required/>
+          <!--  <input type="hidden"  id="nb" name="nb" value=""  required/>-->
+          <div>
+            <input type="hidden"  id="n_ingredient" name="n_ingredient" value=""  required/>
+            <input type="hidden"  id="n_etape" name="n_etape" value=""  required/>
+            <input type="text" class="form-control contour_rose" name="ingredient1"  id="ingredient1" placeholder="ingredient" required/>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-6 text-center" id="inserer_etp">
+          <h2 class="form--header-title">
+            Etapes de la recette
+          </h2>
+          <label>Nombre d'étapes:</label>
+          <var id='nb_etape'>1</var>
+          <textarea class="form-control contour_rose" name="etape1"  id="etape1" placeholder="etape 1" required></textarea>
         </div>
 
       </div>
-      <div id="inserer_etp">
-        <h2 class="form--header-title">
-          Etape de la recette
-        </h2>
-        <label>Nombre d'etape:</label>
-        <var id='nb_etape'>1</var>
-        <textarea class="form-control mt-4 border-rose-input" name="etape1"  id="etape1" placeholder="etape 1" required></textarea>
-      </div>
-
-      <button class="btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
     </form>
   </body>
+  
   <script>
   let click_ing=1;
   let click_etape=1;
   let ing=document.getElementById("inserer_ing");
   let etp=document.getElementById("inserer_etp");
   let bouton1 = document.createElement("button");
-	let texte1 = document.createTextNode("ajouter un ingredient");
+	let texte1 = document.createTextNode("Ajouter un ingrédient");
 	bouton1.appendChild(texte1);
 	bouton1.addEventListener("click",ajout_ingredient,false);
 	document.body.appendChild(bouton1);
-  bouton1.setAttribute("class","btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5")
+  bouton1.setAttribute("class","btn mt-5 mb-5 contour_rose bg-white text-danger center-block px-5")
 
   let bouton2 = document.createElement("button");
-	let texte2 = document.createTextNode("ajouter une etape");
+	let texte2 = document.createTextNode("Ajouter une étape");
 	bouton2.appendChild(texte2);
 	bouton2.addEventListener("click",ajout_etape,false);
 	document.body.appendChild(bouton2);
-  bouton2.setAttribute("class","btn bg-rose-btn text-white mt-4 mb-5 border-rose-btn center-block px-5")
+  bouton2.setAttribute("class","btn mt-5 mb-5 contour_rose bg-white text-danger center-block px-5 mx-4")
   function $_GET(param) {
 	var vars = {};
 	window.location.href.replace( location.hash, '' ).replace(
@@ -103,7 +104,7 @@ document.getElementById("id_recette").value = recette;
     click_ing+=1;
     let ingredient= document.createElement("input");
     ing.appendChild(ingredient);
-    ingredient.setAttribute("class","form-control mb-5 border-rose-input");
+    ingredient.setAttribute("class","form-control mt-2 contour_rose");
     ingredient.setAttribute("id","ingredient"+click_ing);
     ingredient.setAttribute("name","ingredient"+click_ing);
     let i =document.getElementById('nb_ing').innerHTML = click_ing;
@@ -114,13 +115,13 @@ document.getElementById("id_recette").value = recette;
     click_etape+=1;
   let etape= document.createElement("textarea");
     etp.appendChild(etape);
-    etape.setAttribute("class","form-control mt-4 border-rose-input");
+    etape.setAttribute("class","form-control mt-2 contour_rose");
     etape.setAttribute("name","etape"+click_etape);
     etape.setAttribute("id","etape"+click_etape);
     let i =document.getElementById('nb_etape').innerHTML = click_etape;
     document.getElementById("n_etape").value = click_etape;
   }
   </script>
-
+  <button class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" type="submit">Valider</button>
 </script>
 </html>

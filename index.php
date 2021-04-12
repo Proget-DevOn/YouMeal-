@@ -57,7 +57,7 @@
       }
       else {
       ?>
-      <h1 class="police_monogram mx-5 mt-5" style="text-transform: capitalize;">Hello
+      <h1 class="police_monogram mx-5" style="text-transform: capitalize;">Hello
       <?php
       echo htmlspecialchars($_SESSION['login']);?> !</h1>
       <p class="mx-5 bolt"><strong>Qu'est-ce qu'on prépare aujourd'hui?</strong></p>

@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body{
+    margin-top: 100px;
+}
+
 @font-face {
     font-family: 'monogramregular';
     src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),

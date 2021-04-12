@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body{
+    margin-top: 100px;
+}
+
 @font-face {
     font-family: 'monogramregular';
     src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
@@ -102,7 +106,7 @@
     margin-left: auto;
     margin-right: auto;
     height: 100%;
-    width: 96%;
+    width: 1020px;
 }
 
 .image{
@@ -110,4 +114,23 @@
     height: 81%;
     display: block;
     border-top-right-radius: 20px;
+}
+
+
+@media(min-width:1300px){
+    .colonnes{
+        width: fit-content;
+    }
+}
+
+@media(max-width:1040px){
+    .colonnes{
+        width: 680px;
+    }
+}
+
+@media(max-width:700px){
+    .colonnes{
+        width: 340px;
+    }
 }

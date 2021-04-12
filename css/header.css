@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+
 @font-face {
     font-family: 'monogramregular';
     src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
@@ -31,6 +32,10 @@ nav{
     display: flex;
     justify-content: space-evenly;
     border-bottom: 3px solid lightgray;
+    position:fixed;
+    top: 0;
+    background-color: white;
+    z-index: 100;
 }
 
 label.logo{
