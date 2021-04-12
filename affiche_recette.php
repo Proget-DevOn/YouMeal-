@@ -41,9 +41,22 @@
         <div class="top_recette">
           <h3  class="police_monogram titre_recette"><?php echo $donnees['nom_recette'];?></h3>
           <div class="div_image">
-            <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="450" height="300" class="image">
+          <?php if(is_file("image/image_recettes/".$donnees['image']))
+          {?>
+            <img class="image" src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette">
+            <?php
+          }else
+          {?>
+            <img class="image" src="ressources/images/pas_image.jpg" alt="">
+            <?php
+          }?>
             <div class="photo_profil"></div>
             <a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">Recette par <?php  echo $donnees['auteur'];?></a>
+          </div>
+          <div class="boutons_recette">
+            <a href=""><img src="ressources/images/like.png" alt="like"></a>
+            <a href=""><img src="ressources/images/partager.png" alt="partager"></a>
+            <a class="bouton_live" href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/images/live.png" alt="planifier un live"></a>
           </div>
         </div>
         
@@ -56,44 +69,44 @@
         <?php
       }?>
 
-      <div>
-      <a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/live.png" alt="planifier un live" style="display:block;"></a>
-      </div>
       
-      <div class="ingredients">
-        <h4>Ingrédients</h4>
-        <?php
-          $sql="SELECT * FROM ingredients where id_recette='".$_GET['id_recette']."'";
-          $req= $conn->query($sql);
-          while($donnees = $req->fetch(PDO::FETCH_ASSOC))
-          {
-            ?>
-            <strong><?php  echo $donnees['nom_ingredient']; ?></strong><br>
-            <?php
-          } 
-        ?>
-      </div>
-
-      <div class="etapes">
-        <h4>Préparation</h4>
-        <?php
-        $sql="SELECT * FROM preparation where id_recette='".$_GET['id_recette']."' order by id_etape";
-        $req= $conn->query($sql);
-        $cpt = 1;
-        while($donnees = $req->fetch(PDO::FETCH_ASSOC))
-        { ?>
-          <?php if(!empty($donnees['description_etape']))
-                {?>
-                  <strong>Etape <?php echo $cpt;?>:</strong>
-                  <?php 
-                } ?>
-          <p><?php  echo $donnees['description_etape']; ?><p>
-          <div class="chat">
-          </div>
+      
+      <div class="ing_pre">
+        <div class="ingredients p-3">
+          <h4 class="pb-3">Ingrédients</h4>
           <?php
-          $cpt++;
-        }
-        ?>
+            $sql="SELECT * FROM ingredients where id_recette='".$_GET['id_recette']."'";
+            $req= $conn->query($sql);
+            while($donnees = $req->fetch(PDO::FETCH_ASSOC))
+            {
+              ?>
+              <strong><?php  echo $donnees['nom_ingredient']; ?></strong><br>
+              <?php
+            } 
+          ?>
+        </div>
+
+        <div class="etapes p-3">
+          <h4>Préparation</h4>
+          <?php
+          $sql="SELECT * FROM preparation where id_recette='".$_GET['id_recette']."' order by id_etape";
+          $req= $conn->query($sql);
+          $cpt = 1;
+          while($donnees = $req->fetch(PDO::FETCH_ASSOC))
+          { ?>
+            <?php if(!empty($donnees['description_etape']))
+                  {?>
+                    <strong>Etape <?php echo $cpt;?>:</strong>
+                    <?php 
+                  } ?>
+            <p><?php  echo $donnees['description_etape']; ?><p>
+            <div class="chat">
+            </div>
+            <?php
+            $cpt++;
+          }
+          ?>
+        </div>
       </div>
     </div>
   </body>

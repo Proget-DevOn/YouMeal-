@@ -54,7 +54,6 @@ body{
 }
 
 .div_image{
-    background-color: black;
     position: relative;
     margin-bottom: 60px;
 }
@@ -69,11 +68,12 @@ body{
     height: 50px;
     border-bottom-left-radius: 30px;
     text-decoration: none;
-    color: black;
 }
 
 .image{
     border-top-right-radius: 30px;
+    width: 450px;
+    height: 300px;
 }
 
 .photo_profil{
@@ -97,7 +97,56 @@ body{
 }
 
 .ingredients{
-    margin: 20px 0;
     background-color: #ffcc94;
     width: fit-content;
+    display:inline-block;
+    vertical-align:top
+}
+
+.etapes{
+    display: inline-block;
+}
+
+.boutons_recette{
+    display: block;
+}
+
+.ing_pre{
+    margin-top: 20px;
+}
+
+.bouton_live{
+    margin-left: 320px;
+}
+
+@media(max-width:550px){
+
+    .image{
+        border-top-right-radius: 30px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .div_image a{
+        bottom: -40px;
+        padding-left: 90px;
+        height: 40px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .top_recette{
+        width: 300px;
+    }
+
+    .photo_profil{
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        bottom: -35px;
+        left: 20px;
+    }
+
+    .bouton_live{
+        margin-left: 170px;
+    }
 }
