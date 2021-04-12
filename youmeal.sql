@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 04 avr. 2021 à 20:20
+-- Généré le : lun. 12 avr. 2021 à 13:44
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -59,12 +59,33 @@ CREATE TABLE IF NOT EXISTS `chat` (
 
 DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE IF NOT EXISTS `ingredients` (
-  `quantite` varchar(11) NOT NULL,
   `nom_ingredient` varchar(50) NOT NULL,
   `id_recette` int(11) NOT NULL,
   PRIMARY KEY (`nom_ingredient`,`id_recette`),
   KEY `id_recette` (`id_recette`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `ingredients`
+--
+
+INSERT INTO `ingredients` (`nom_ingredient`, `id_recette`) VALUES
+('', 2),
+('', 30),
+('1l lait', 30),
+('3oeuf', 30),
+('500g farine', 30),
+('a', 29),
+('baba', 32),
+('cdcdcd', 32),
+('diana', 29),
+('gfbg', 31),
+('levure chimique', 30),
+('mama', 33),
+('papa', 33),
+('reussi', 29),
+('rr', 31),
+('TEST', 2);
 
 -- --------------------------------------------------------
 
@@ -78,10 +99,19 @@ CREATE TABLE IF NOT EXISTS `live` (
   `date_live` datetime NOT NULL,
   `ID_recette` int(10) NOT NULL,
   `hote` varchar(30) NOT NULL,
+  `statut` enum('public','prive') NOT NULL,
   PRIMARY KEY (`ID_live`),
   KEY `hote` (`hote`),
   KEY `ID_recette` (`ID_recette`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `live`
+--
+
+INSERT INTO `live` (`ID_live`, `date_live`, `ID_recette`, `hote`, `statut`) VALUES
+(1, '2021-12-11 21:17:00', 30, 'diana11', 'public'),
+(4, '2021-03-02 20:20:00', 30, 'diana11', 'public');
 
 -- --------------------------------------------------------
 
@@ -119,12 +149,31 @@ CREATE TABLE IF NOT EXISTS `participant` (
 
 DROP TABLE IF EXISTS `preparation`;
 CREATE TABLE IF NOT EXISTS `preparation` (
-  `id_etape` int(11) NOT NULL,
+  `id_etape` int(11) NOT NULL AUTO_INCREMENT,
   `description_etape` text NOT NULL,
   `id_recette` int(11) NOT NULL,
   PRIMARY KEY (`id_etape`,`id_recette`),
   KEY `id_recette` (`id_recette`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `preparation`
+--
+
+INSERT INTO `preparation` (`id_etape`, `description_etape`, `id_recette`) VALUES
+(2, 'je savais que j arriverai', 29),
+(1, 'houpiiiii', 29),
+(3, 'regaler vous', 30),
+(4, 'yy', 31),
+(5, 'ghhg', 31),
+(6, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 32),
+(7, 'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc', 32),
+(8, 'ddddddddddddddddddddddddddddddddddddddddddddddddddw\'\'', 32),
+(9, 'TEST', 2),
+(10, '', 2),
+(11, 'etape1', 33),
+(12, 'etape2', 33),
+(13, 'etape3', 33);
 
 -- --------------------------------------------------------
 
@@ -139,17 +188,23 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   `date_recette` date NOT NULL,
   `temps_execution` time NOT NULL,
   `cout` enum('economique','moyen','couteux') NOT NULL,
-  `note` int(11),
+  `note` int(11) DEFAULT NULL,
   `auteur` varchar(20) NOT NULL,
   `categorie` enum('entree','plat','desert','aperitif') NOT NULL,
   `regime` enum('vegan','vegetarien','helthy','autre') NOT NULL,
-  `image` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_recette`),
-  UNIQUE KEY `auteur` (`auteur`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `image` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_recette`)
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
-ALTER TABLE recettes
-ADD FOREIGN KEY (auteur) REFERENCES utilisateurs(pseudo);
+--
+-- Déchargement des données de la table `recettes`
+--
+
+INSERT INTO `recettes` (`id_recette`, `nom_recette`, `date_recette`, `temps_execution`, `cout`, `note`, `auteur`, `categorie`, `regime`, `image`) VALUES
+(30, 'pancake', '2021-04-10', '00:30:00', 'economique', NULL, 'test', 'desert', 'vegetarien', 'pancakes-2291908_1920.jpg'),
+(31, 'test', '2021-04-10', '00:30:00', 'economique', NULL, 'diana11', 'entree', 'vegetarien', ''),
+(32, 'recette', '2021-04-10', '00:00:00', 'economique', NULL, 'diana11', 'entree', 'vegetarien', ''),
+(33, 'tesste', '2021-04-11', '02:30:00', 'couteux', NULL, 'diana11', 'aperitif', 'vegan', 'Capture');
 
 -- --------------------------------------------------------
 
@@ -166,6 +221,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
   `bio` text,
+  `photo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`pseudo`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -174,9 +230,9 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`pseudo`, `password`, `email`, `date_naissance`, `nom`, `prenom`, `bio`) VALUES
-('diana', 'azerty', 'di.diana@live.fr', '1998-01-21', 'diangana', 'diana', NULL),
-('dianaa', 'Wp119wP119$*', 'diana@gmail.com', '1998-01-21', 'Diangana', 'Diana', NULL);
+INSERT INTO `utilisateurs` (`pseudo`, `password`, `email`, `date_naissance`, `nom`, `prenom`, `bio`, `photo`) VALUES
+('diana11', '$2y$10$s.D9YNoeNgHN1ckkDt0K9.AKjNoS.NfNJxcj8yzhgIkyjRkW7eAAa', 'di.diana@live.fr', '1998-01-21', 'diangana', 'diana', NULL, ''),
+('test', '$2y$10$TFrM5HZzfeKuD6sRYxNFeeaSpoN665MulI4sU1e1SY60JslsqhPmG', 'test@gmail.com', '2004-07-10', 'madame', 'test', NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
