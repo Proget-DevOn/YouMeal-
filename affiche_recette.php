@@ -32,8 +32,6 @@
 
     <div class="div_recette">
 
-      <p><a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>">Ajouter un live</a></p>
-
       <?php
       $sql="SELECT * FROM recettes WHERE id_recette='".$_GET['id_recette']."'";
       $req= $conn->query($sql);
@@ -48,6 +46,7 @@
             <a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>">Recette par <?php  echo $donnees['auteur'];?></a>
           </div>
         </div>
+        
         <div class="infos_recette">
           <p class="une_info">Coût: <?php echo $donnees['cout']; ?></p>
           <p class="une_info">Temps de réalisation: <?php  echo $donnees['temps_execution'];?> heures</p>
@@ -56,6 +55,10 @@
         </div>
         <?php
       }?>
+
+      <div>
+      <a href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/live.png" alt="planifier un live" style="display:block;"></a>
+      </div>
       
       <div class="ingredients">
         <h4>Ingrédients</h4>
@@ -65,8 +68,7 @@
           while($donnees = $req->fetch(PDO::FETCH_ASSOC))
           {
             ?>
-            <strong><?php  echo $donnees['nom_ingredient']; ?></strong>
-            </div>
+            <strong><?php  echo $donnees['nom_ingredient']; ?></strong><br>
             <?php
           } 
         ?>
