@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -43,14 +53,6 @@
 
     </nav>
 
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }?>
 
     <script type="text/javascript">
       let api;

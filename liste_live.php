@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,18 +30,13 @@
 
   <body class="fond_radiant">
 
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }else{
-      include('header.html');
-    }?>
+    
 
     <?php
+      if(isset($_SESSION['login']))
+      {
+        require ('header.html');
+      }
       include('config.php');
       global $conn;
       if(isset($_GET['recherche']))

@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -20,17 +30,10 @@
   <body class="fond_radiant">
 
 
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }
-    require ('header.html');
-    ?>
-<?php if (!isset($_GET['id_recette'])) {
+    
+<?php 
+  require ('header.html');
+  if (!isset($_GET['id_recette'])) {
   $dest="index.php";
   echo '<script language="JavaScript">window.location=\'' . $dest.'\'</script>';
 } ?>

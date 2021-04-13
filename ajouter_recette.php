@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -13,14 +23,7 @@
     <title>Ajout recette</title>
   </head>
   <body class="fond_radiant">
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }?>
+    
     <?php require ('header.html');?>
     <div class="row justify-content-center">
       <div class="col-6 col-md-4 text-center">

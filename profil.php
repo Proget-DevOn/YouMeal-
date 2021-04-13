@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,41 +29,11 @@
   </head>
 
   <body class="fond_radiant">
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">YouMeal</label>
-
-      <div class="barre_recherche_div">
-        <form  method="GET" action="">
-          <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
-          <input class="barre_recherche_input" type="text" name="recherche">
-        </form>
-      </div>
-
-      <ul>
-        <li><a href="profil.php">PROFIL</a></li>
-          <li><a href="#">MENU2</a></li>
-          <li><a href="deconnexion.php">DECONNEXION</a></li>
-      </ul>
-
-      <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
-
-    </nav>
-
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }
-    include("config.php");
-    global $conn;
-    //afficher le profil d'une autre personne
+<?php
+  include('header.html');
+  include("config.php");
+  global $conn;
+  //afficher le profil d'une autre personne
  if(isset($_GET["pseudo"]))
  {
 

@@ -1,3 +1,12 @@
+<?php session_start();
+
+if(!isset($_SESSION['login']))
+{
+  header('Location:connexion.html');
+  die('');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -20,18 +29,10 @@
   <body class="fond_radiant">
 
     <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
+    if(isset($_SESSION['login']))
     {
-      header('Location:connexion.html');
-      die('');
-    }else{
       require ('header.html');
     }
-    ?>
-
-    <?php
       include('config.php');
       global $conn;
       if(isset($_GET['recherche']))
