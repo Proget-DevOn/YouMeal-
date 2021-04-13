@@ -215,4 +215,7 @@ nav ul li a:hover{
         position: absolute;
         right: 110px;
     }
+    .barre_recherche_div{
+        width: 300px;
+    }
 }
