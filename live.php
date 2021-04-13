@@ -40,19 +40,19 @@ $sql="SELECT * FROM live WHERE ID_live='".$_GET['ID_live']."'";
 $rep = $conn->query($sql);
 while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
 {
-  if($donnees['date_live']>localtime())
-{
-  echo "le live debute dans '".$dteDiff."'";
-  $dteDiff=NOW()->diff($donnees['date_live']);
-  print $dteDiff->format("%H:%I:%S");
-  echo "le live debute dans '".$dteDiff."'";
+  $date = new DateTime('now');
+$diff = new DateTime($donnees['date_live']);
+var_dump($date->diff($diff));
+if ($date < $diff ){
+  echo "La diffusion n'a pas encore débuté";
 
-}else{
+}
+else{
   include('live.js');
   ?><div id="meet"><?php
 }
 
 }
 ?>
-<div id="meet"></body>
+</body>
 </html>
