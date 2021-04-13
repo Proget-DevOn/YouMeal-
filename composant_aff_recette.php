@@ -12,9 +12,9 @@
     <!-- <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
     <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200">
     </a> -->
-    <strong><a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>" class="nom_recette">
+    <strong><a style="text-transform:capitalize" href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>" class="nom_recette">
     <?php echo $donnees['nom_recette'];?>
     </a></strong>
-    <p class="categorie_recette"><?php echo $donnees['categorie']; ?></p>
+    <p style="text-transform:capitalize" class="categorie_recette"><?php echo $donnees['categorie']; ?></p>
     <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> regime:<?php  echo $donnees['regime']; ?> miam<?php  echo $donnees['note']; ?> </p> -->
 </div>
