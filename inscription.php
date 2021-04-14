@@ -1,6 +1,5 @@
 <?php
 include("config.php");
-include('inscription.html');
 
 function ajout_login($pseudo,$password,$email,$birthday,$nom,$prenom){
 
@@ -18,5 +17,6 @@ if(ajout_login($_POST['pseudo'],$_POST['password'],$_POST['email'],$_POST['birth
 else{
   header("Location:thankpage.html");
 }
+include('inscription.html');
 
 ?>

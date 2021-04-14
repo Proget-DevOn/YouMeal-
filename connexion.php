@@ -1,7 +1,5 @@
 <?php
 include("config.php");
-include('connexion.html');
-
 
 $pseudo=$_POST['pseudo'];
 $password=$_POST['password'];
@@ -11,15 +9,15 @@ $rows = $pass->fetchAll();
 if(password_verify($password, $rows[0]['password'])){
       if (!session_id()){
         session_start();
-      $_SESSION['login'] = $pseudo;
+        $_SESSION['login'] = $pseudo;
 
-      $message = 'Bonjour '.htmlspecialchars($_SESSION['login']).', vous êtes connecté';
-      $dest="index.php";
-      echo $message;
+        $message = 'Bonjour '.htmlspecialchars($_SESSION['login']).', vous êtes connecté';
+        $dest="index.php";
+        echo $message;
         echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
       exit;
       }
-}
-include('footer.html');
 
+include('connexion.html');
+include('footer.html');
 ?>

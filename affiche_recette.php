@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    include('config.php');
+    global $conn;
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -20,15 +31,7 @@
   <body class="fond_radiant">
     <?php require ('header.html');?>
 
-    <?php
-    session_start();
-    include('config.php');
-    global $conn;
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }?>
+    
 
     <div class="div_recette">
 
