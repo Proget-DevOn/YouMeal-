@@ -5,9 +5,16 @@
     list-style: none;
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 
 body{
     background-color: grey;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 80px;
+    padding-top: 80px;
     height: 2000px;
 }
 
