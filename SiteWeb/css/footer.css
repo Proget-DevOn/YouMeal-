@@ -8,6 +8,7 @@
 
 body{
     background-color: grey;
+    padding-bottom: 200px;
 }
 
 @font-face {
