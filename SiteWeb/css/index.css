@@ -2,27 +2,12 @@
     margin: 0;
     padding: 0;
     color: white;
-    font-family: "Manjari-Thin";
+}
+#text-center{
     text-align: center;
 }
 
-@font-face {
-    font-family: "Manjari-Bold";
-    src: url(../resources/font/Manjari-Bold.ttf);
-}
-
-@font-face {
-    font-family: "Manjari-Regular";
-    src: url(../resources/font/Manjari-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Manjari-Thin";
-    src: url(../resources/font/Manjari-Thin.ttf);
-}
-
 #h1{
-    font-family: "Manjari-Bold";
     color: white;
     padding-top: 22.5%;
     font-size: 100px;
@@ -32,7 +17,7 @@
 
 #scroll{
     position: relative;
-    font-family: "Manjari-Bold";
+    margin: auto 0;
     top: -300px;
     padding-top: 5px;
     width: 250px;
@@ -53,11 +38,10 @@
     color: black;
     letter-spacing: 7px;
     width: 280px;
-
 }
 
 #scrolldown{
-    height: 100%;
+    padding-top: 120px;
 }
 
 #link-button{
@@ -75,27 +59,39 @@ h2{
 
 #images{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
+
+.image{
+    padding: 15px;
+}
+
 #image1{
     width: 200px;
+    padding-bottom: 10px;
 }
 
 #image2{
     height: 145px;
+    padding-bottom: 10px;
 }
 
 #image3{
     height: 145px;
+    padding-bottom: 10px;
 }
 
 #image4{
     height: 180px;
+    padding-bottom: 10px;
 }
 
 #image5{
     height: 145px;
+    padding-bottom: 10px;
 }
 
 .center{
@@ -107,4 +103,34 @@ h2{
 
 .clients{
     height: 100px;
+}
+
+#clients{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 0 15px;
+}
+
+#client1{
+    width: 120px;
+    height: auto;
+}
+
+#client2{
+    width: 140px;
+    height: auto;
+}
+#client4{
+    width: 120px;
+    height: auto;
+}
+
+@media(max-width:1200px){
+    #h1{
+        font-size: 80px;
+    }
 }

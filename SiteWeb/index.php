@@ -15,33 +15,52 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-        <div class="container">
-            <h1 id="h1">Bienvenue chez Devon !</h1>
-            <button onclick="scrollWin(0, 1000)" id="scroll">NOUS CONNAÎTRE</button>
-            <h2 id="scrolldown">Notre expertise</h2>
-            
-            <div id="images">
-                <div class="center"><img id="image1" src="images/codage-web.png">Développement web</div>
-                <div class="center"><img id="image2" src="images/appel.png">Développement d'application</div>
-                <div class="center"><img id="image3" src="images/moniteur.png">Hébergement web</div>
-                <div class="center"><img id="image4" src="images/mot-de-passe.png">Sécurité informatique</div>
-                <div class="center"><img id="image5" src="images/reparer.png">Maintenance</div>
-            </div>
+    <body id="body">
+        <div id="text-center">
+            <div class="container police_cano">
+                <h1 id="h1">Bienvenue chez Devon !</h1>
+                <button onclick="scrollWin()" id="scroll">NOUS CONNAÎTRE</button>
+                <h2 id="scrolldown">Notre expertise</h2>
+                
+                <div id="images">
+                    <div class="image">
+                        <img id="image1" src="images/codage-web.png">
+                        <div>Développement web</div>
+                    </div>
+                    <div class="image">
+                        <img id="image2" src="images/appel.png">
+                        <div>Développement d'applications</div>
+                    </div>
+                    <div class="image">
+                        <img id="image3" src="images/moniteur.png">
+                        <div>Hébergement web</div>
+                    </div>
+                    <div class="image">
+                        <img id="image4" src="images/mot-de-passe.png">
+                        <div>Sécurité informatique</div>
+                    </div>
+                    <div class="image">
+                        <img id="image5" src="images/reparer.png">
+                        <div>Maintenance</div>
+                    </div>
+                </div>
 
-            <h2>Ils nous font confiance</h2>
-            <div id="clients">
-                <img class="clients" src="images/airbnb.png" alt="">
-                <img class="clients" src="images/paypal.png" alt="">
-                <img class="clients" src="images/spotify.png" alt="">
-                <img class="clients" src="images/booking.png" alt="">
+                <h2>Ils nous font confiance</h2>
+                <div id="clients">
+                    <img id="client1" class="clients" src="images/airbnb.png" alt="">
+                    <img id="client2" class="clients" src="images/paypal.png" alt="">
+                    <img id="client3" class="clients" src="images/spotify.png" alt="">
+                    <img id="client4" class="clients" src="images/booking.png" alt="">
+                </div>
             </div>
         </div>
     </body>
 </html>
 
 <script>
-function scrollWin(x, y) {
-  window.scrollBy(x, y);
+function scrollWin() {
+    document.getElementById('scrolldown').scrollIntoView();
 }
 </script>
+
+<?php include('footer.html');?>
