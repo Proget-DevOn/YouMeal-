@@ -97,6 +97,7 @@ if(!isset($_SESSION['login']))
 
     <?php
     }
+    include('footer.html');
     ?>
     </div>
     </div>
