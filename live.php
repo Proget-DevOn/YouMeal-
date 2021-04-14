@@ -44,7 +44,7 @@ while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
 {
   $date = new DateTime('now');
 $diff = new DateTime($donnees['date_live']);
-var_dump($date->diff($diff));
+date_diff($date,$diff);
 if ($date < $diff ){
   echo "La diffusion n'a pas encore débuté";
 
