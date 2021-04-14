@@ -2,7 +2,7 @@
   "short_name": "YouMeal",
   "name": "application YouMeal",
   "description": "Application web progressive du reseau social culinaire",
-  "start_url": "/index.php",
+  "start_url": "/connexion.html",
   "icons": [
     {
       "src": "ressources/logo_youmeal192.png",

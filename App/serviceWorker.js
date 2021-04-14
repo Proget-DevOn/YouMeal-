@@ -1,5 +1,5 @@
 const staticCacheName = "cache-v1";
-const assets = ["/", "/index.php"];
+const assets = ["/", "/connexion.html"];
 
 // ajout fichiers en cache
 self.addEventListener("install", (e) => {
