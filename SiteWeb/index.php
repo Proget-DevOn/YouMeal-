@@ -18,7 +18,7 @@
     <body>
         <div class="container police_cano">
             <h1 id="h1">Bienvenue chez Devon !</h1>
-            <button onclick="scrollWin(0, 1000)" id="scroll">NOUS CONNAÎTRE</button>
+            <button onclick="scrollWin()" id="scroll">NOUS CONNAÎTRE</button>
             <h2 id="scrolldown">Notre expertise</h2>
             
             <div id="images">
@@ -56,7 +56,7 @@
 </html>
 
 <script>
-function scrollWin(x, y) {
-  window.scrollBy(x, y);
+function scrollWin() {
+    document.getElementById('scrolldown').scrollIntoView();
 }
 </script>
