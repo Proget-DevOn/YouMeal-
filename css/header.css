@@ -169,7 +169,7 @@ nav ul li a:hover{
     .checkbtn{
         display: block;
     }
-    ul{
+    #menu{
         position: fixed;
         width: 100%;
         height: 100vh;

@@ -96,6 +96,7 @@
 
     <?php
     }
+    include('footer.html');
     ?>
     </div>
     </div>

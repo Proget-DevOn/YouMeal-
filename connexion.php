@@ -20,4 +20,6 @@ if(password_verify($password, $rows[0]['password'])){
       exit;
       }
 }
+include('footer.html');
+
 ?>
