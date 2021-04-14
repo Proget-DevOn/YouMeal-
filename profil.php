@@ -47,7 +47,7 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 }
 }?>
 <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
-<a href="sabonner.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'sabonner</button></a>
+<a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'sabonner</button></a>
 <?php
 }
 
@@ -58,7 +58,7 @@ else {
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
-     ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
+     ?><h2><?php echo $donnees['pseudo'];?></h2>
      <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
      <p>Nom: <?php echo $donnees['nom'];?></p><?php
      ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
@@ -72,14 +72,14 @@ else {
 
    $rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='".$_SESSION['login']."'");
              while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
-               ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
-              <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
+               ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+              <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
               <?php
              }
              $rep=$conn->query("SELECT * from abonnement  inner join utilisateurs on abonnement.pseudo_abonne=utilisateurs.pseudo and pseudo_abonnement='".$_SESSION['login']."'");
              if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
-               ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
-              <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
+               ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+               <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
               <?php
 
              }
