@@ -1,0 +1,139 @@
+h1{
+    font-size: 5em;
+    display: inline;
+}
+header{
+    text-align: center;
+    background: url(img/bikini-bottom.jpeg)
+}
+#gary{
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 5em;
+}
+button img{
+    max-width: 0.9em;
+    height: auto;
+}
+button{
+   width : 2em;
+   position: absolute;
+   right: 0;
+}
+.search{
+    position: absolute;
+    right:0;
+}
+.navi{
+    display: table;
+    margin: auto;
+    font-weight:bold;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+#welcome{
+    margin: 1em;
+    color: #FFB6C1;
+    font-size: 2em; 
+    font-weight:bold;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    font-weight: bold;
+}
+.grid {
+    padding: 1em;
+
+}
+.grid h3{
+    text-align: center;
+}
+body a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 0.5em;
+    color:#000000;
+}
+.grid img{
+    max-width: 20em;
+    height: auto;
+    border-width: 0.5em;
+    border-style: solid;
+}
+.prix{
+    text-decoration: line-through;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.reduc{
+    font-size: 2em;
+    background-color:#FF0000;
+    color:#FFFF00;
+    margin-top: 0;
+    display: inline;
+}
+#bobdetail{
+    text-align: center;
+}
+#bobnoel{
+    max-width: 40em;
+    height: auto;
+    border-width: 0.5em;
+    border-style: solid;
+    margin: 5em;
+}
+.who{
+    text-align: center;
+}
+.copain{
+    text-align: center;
+    max-width: 20em;
+    height: auto;
+    margin-left: 5em;
+    margin-right: auto;
+}
+.col-1-4{
+    text-align: center;
+    column-width: 10em;
+}
+.prixdetail{
+    text-align: center;
+    font-weight: bold;
+}
+#reduc{
+    font-size: 2em;
+    background-color:#FF0000;
+    color:#FFFF00;
+    margin-top: 0;
+    display: inline;
+}
+#prix{
+    text-decoration: line-through;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.com{
+    text-align: center;
+    font-weight: bold;
+}
+.commander{
+    background-color: #FFB6C1;
+    border-width: 0.2em;
+    border-style: solid;
+    margin: 5em;
+    text-align: center;
+
+}
+#valider{
+    background-color: #FFB6C1;
+    border-width: 0.2em;
+    border-style: solid;
+
+}
+.coor{
+    font-weight: bold;
+    padding: 2em;
+}
