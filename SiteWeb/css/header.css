@@ -77,6 +77,12 @@ nav ul li a:hover{
     text-decoration: none;
 }
 
+.nav_youmeal:hover{
+    color:#00ff92;
+    transition: .5s;
+    text-decoration: none;
+}
+
 /* @media(max-width:854px){
     label.logo{
         padding:0 50px;
