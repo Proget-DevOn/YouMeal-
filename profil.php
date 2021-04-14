@@ -29,27 +29,12 @@
   </head>
 
   <body class="fond_radiant">
-<<<<<<< HEAD
 
     <?php
-
-    session_start();
     include("header.html");
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }
     include("config.php");
     global $conn;
     //afficher le profil d'une autre personne
-=======
-<?php
-  include('header.html');
-  include("config.php");
-  global $conn;
-  //afficher le profil d'une autre personne
->>>>>>> 499a4a27edebb6fb58a77011ddfbdfb779985be6
  if(isset($_GET["pseudo"]))
  {
  $rep=$conn->query("SELECT * from utilisateurs");
@@ -67,6 +52,20 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
 <a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'sabonner</button></a>
 <?php
+$rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='". $_GET['pseudo']."'");
+          while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+            ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+           <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+           <?php
+          }
+          $rep=$conn->query("SELECT * from abonnement  inner join utilisateurs on abonnement.pseudo_abonne=utilisateurs.pseudo and pseudo_abonnement='". $_GET['pseudo']."'");
+          if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+            ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+            <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+           <?php
+
+          }
+
 }
 
 //afficher son profil
@@ -85,7 +84,7 @@ else {
  }
  ?><a href="modifier.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="modifier">Modifier</button></a><?php
 
-}
+
 
 
    $rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='".$_SESSION['login']."'");
@@ -103,7 +102,7 @@ else {
              }
 
 
-
+}
 
 
 
