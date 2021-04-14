@@ -3,6 +3,7 @@
     padding: 0;
     color: white;
     font-family: "Manjari-Thin";
+    text-align: center;
 }
 
 @font-face {
@@ -20,8 +21,67 @@
     src: url(../resources/font/Manjari-Thin.ttf);
 }
 
-h1{
+#h1{
     font-family: "Manjari-Bold";
     color: white;
-    padding-top: 50px;
+    padding-top: 22.5%;
+    font-size: 100px;
+    height: 100vh;
+    text-align: center;
+}
+
+#scroll{
+    width: 150px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+#scroll:hover{
+    background-color: white;
+    color: black;
+}
+
+h2{
+    font-family: "Manjari-Regular";
+    padding-top: 30px;
+}
+
+#images{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#image1{
+    width: 200px;
+}
+
+#image2{
+    height: 145px;
+}
+
+#image3{
+    height: 145px;
+}
+
+#image4{
+    height: 180px;
+}
+
+#image5{
+    height: 145px;
+}
+
+.center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clients{
+    height: 100px;
 }
