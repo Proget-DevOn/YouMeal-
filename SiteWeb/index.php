@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <h2>Ils nous font confiance</h2>
+                <h2 id="h2">Ils nous font confiance</h2>
                 <div id="clients">
                     <img id="client1" class="clients" src="images/airbnb.png" alt="">
                     <img id="client2" class="clients" src="images/paypal.png" alt="">
