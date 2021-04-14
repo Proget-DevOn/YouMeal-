@@ -62,11 +62,16 @@ footer div{
     margin-right: 50px;
 }
 
-footer div a{
+footer a{
     text-decoration: none;
     padding: 0;
     margin: 0;
     color:white;
+}
+
+footer div a:hover{
+    text-decoration: none;
+    color:#00ff92;
 }
 
 footer div p{
