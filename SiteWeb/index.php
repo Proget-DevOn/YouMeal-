@@ -22,11 +22,26 @@
             <h2 id="scrolldown">Notre expertise</h2>
             
             <div id="images">
-                <div class="center"><img id="image1" src="images/codage-web.png">Développement web</div>
-                <div class="center"><img id="image2" src="images/appel.png">Développement d'application</div>
-                <div class="center"><img id="image3" src="images/moniteur.png">Hébergement web</div>
-                <div class="center"><img id="image4" src="images/mot-de-passe.png">Sécurité informatique</div>
-                <div class="center"><img id="image5" src="images/reparer.png">Maintenance</div>
+                <div class="image">
+                    <img id="image1" src="images/codage-web.png">
+                    <div>Développement web</div>
+                </div>
+                <div class="image">
+                    <img id="image2" src="images/appel.png">
+                    <div>Développement d'applications</div>
+                </div>
+                <div class="image">
+                    <img id="image3" src="images/moniteur.png">
+                    <div>Hébergement web</div>
+                </div>
+                <div class="image">
+                    <img id="image4" src="images/mot-de-passe.png">
+                    <div>Sécurité informatique</div>
+                </div>
+                <div class="image">
+                    <img id="image5" src="images/reparer.png">
+                    <div>Maintenance</div>
+                </div>
             </div>
 
             <h2>Ils nous font confiance</h2>
