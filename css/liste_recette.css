@@ -52,7 +52,7 @@ body{
     height: 200px;
     border-radius: 0 20px;
     position: relative;
-    margin: 20px 20px;
+    margin: 30px 20px;
     display: inline-block;
 }
 
@@ -75,7 +75,7 @@ body{
 .nom_recette:hover{
     text-decoration: none;
     color: grey;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .auteur_recette{
