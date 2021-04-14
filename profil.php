@@ -50,7 +50,7 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 }
 }?>
 <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
-<a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'sabonner</button></a>
+<a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'abonner</button></a>
 <?php
 $rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='". $_GET['pseudo']."'");
           while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
@@ -103,9 +103,6 @@ else {
 
 
 }
-
-
-
  ?>
 </body>
 </html>

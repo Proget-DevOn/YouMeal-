@@ -18,5 +18,5 @@ else{
   header("Location:thankpage.html");
 }
 include('inscription.html');
-
+include('footer.html');
 ?>
