@@ -29,15 +29,14 @@
   </head>
 
   <body class="fond_radiant">
-<?php
-  include('header.html');
-  include("config.php");
-  global $conn;
-  //afficher le profil d'une autre personne
+
+    <?php
+    include("header.html");
+    include("config.php");
+    global $conn;
+    //afficher le profil d'une autre personne
  if(isset($_GET["pseudo"]))
  {
-
-
  $rep=$conn->query("SELECT * from utilisateurs");
 while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 {
@@ -51,8 +50,24 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 }
 }?>
 <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
+<a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">s'sabonner</button></a>
 <?php
+$rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='". $_GET['pseudo']."'");
+          while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+            ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+           <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+           <?php
+          }
+          $rep=$conn->query("SELECT * from abonnement  inner join utilisateurs on abonnement.pseudo_abonne=utilisateurs.pseudo and pseudo_abonnement='". $_GET['pseudo']."'");
+          if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+            ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+            <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+           <?php
+
+          }
+
 }
+
 //afficher son profil
 else {
   $rep=$conn->query("SELECT * from utilisateurs");
@@ -60,58 +75,35 @@ else {
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
-     ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
+     ?><h2><?php echo $donnees['pseudo'];?></h2>
      <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
      <p>Nom: <?php echo $donnees['nom'];?></p><?php
      ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
    <p>Bio: <?php echo $donnees['bio'];?></p><?php
   }
  }
+ ?><a href="modifier.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="modifier">Modifier</button></a><?php
 
 
-?>
-<!--formulaire depliant avec bootstrap-->
-<button type="button" class="btn btn-success" data-toggle="collapse">Modifier</button><br/>
-<div id="profil" class="collapse"> <?php
-include("upload_profil.php");?>
-    <form enctype="multipart/form-data" action="" method="POST">
-    	  <p>
-    		<textarea name="bio" rows="8" cols="45" placeholder="bio" required></textarea>
-    	</p>
 
-    	  <p><input type="submit" value="OK"></p>
-        </form>
-      </div>
-        <?php if (isset($_POST['prenom']))
-        {
-          $rep=$conn->query("SELECT * from utilisateurs where pseudo='".$_SESSION['login']."'");
-          if ($donnees=$rep->fetch(PDO::FETCH_BOTH))
-          {
-            $sql="UPDATE utilisateurs SET photo='".$_POST['image']."' WHERE pseudo='".$_SESSION['login']."'";
-            $req=$conn->query($sql);
-            $sql="UPDATE profil SET bio='".$_POST['interet']."' WHERE pseudo='".$_SESSION['login']."'";
-            $req=$conn->query($sql);
-            $dest="profil.php";
-             echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
-             $rep=$conn->query("SELECT * from abonnement where pseudo_abonne='".$_SESSION['login']."'");
-             if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
 
+   $rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='".$_SESSION['login']."'");
+             while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+               ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+              <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+              <?php
              }
-             $rep=$conn->query("SELECT * from abonnement where pseudo_abonnement='".$_SESSION['login']."'");
+             $rep=$conn->query("SELECT * from abonnement  inner join utilisateurs on abonnement.pseudo_abonne=utilisateurs.pseudo and pseudo_abonnement='".$_SESSION['login']."'");
              if ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
+               ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
+               <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
+              <?php
 
              }
 
 
-          }
-          else {
+}
 
-            echo "Une erreur est survenue";
-            $dest="page.php";
-             echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
-          }
-          }
-        }
 
 
  ?>

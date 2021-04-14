@@ -7,7 +7,7 @@
       die('');
     }
 ?>
-    
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -23,7 +23,7 @@
     <title>Ajout recette</title>
   </head>
   <body class="fond_radiant">
-    
+
     <?php require ('header.html');?>
     <div class="row justify-content-center">
       <div class="col-6 col-md-4 text-center">
@@ -59,7 +59,7 @@
               <option value="vegetarien">Végétarien</option>
               <option value="vegan">Vegan</option>
               <option value="autre">Autre</option>
-              
+
             </select>
             <button class="btn bouton_sinscrire text-white mt-4 mb-5 border-rose-btn center-block px-5" type="submit">Valider</button>
           </form>

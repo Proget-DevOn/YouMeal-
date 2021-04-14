@@ -1,0 +1,27 @@
+{
+  "Name": "application YouMeal",
+  "short_name": "YouMeal",
+  "start_url": "/index.php",
+  "display": "standalone",
+  "background_color": "#ffefff",
+  "theme_color": "#ffefff",
+  "orientation":"portrait-primary",
+  "icons": [
+    {
+      "src": "ressources/logo_youmeal192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ressources/logo_youmeal512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "ressources/logo_youmealm.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+ }

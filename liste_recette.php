@@ -7,7 +7,7 @@
       die('');
     }
 ?>
-    
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -28,13 +28,13 @@
   </head>
 
   <body class="fond_radiant">
-  
+
     <?php
       if(isset($_SESSION['login']))
       {
         require ('header.html');
       }
-      
+
       include('config.php');
       global $conn;
       if(isset($_GET['recherche']))
@@ -63,7 +63,7 @@
         </div>
 
         <div class="colonnes justify-content-center">
-        
+
           <?php $sql='SELECT * FROM recettes';
           $rep = $conn->query($sql);
           while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
