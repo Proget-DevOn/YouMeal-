@@ -5,42 +5,57 @@
     list-style: none;
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 
 body{
     background-color: grey;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    height: 2000px;
 }
 
-.police_rubrique{
-    font-family: 'Oswald', sans-serif;
-    font-size: large;
+@font-face {
+    font-family: 'canoregular';
+    src: url('../fonts/cano-webfont.woff2') format('woff2'),
+         url('../fonts/cano-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-.police_nom{
-    font-family: 'Lobster', cursive;
-    font-size: xx-large;
-}
-
-.logo{
-    font-family: 'Lobster', cursive;
-    font-size: xx-large;
+.police_cano{
+    font-family: 'canoregular';
 }
 
 nav{
-    background-color:#46022c;
+    background-color:black;
     width: 100%;
     height: 80px;
+    position:fixed;
+    top: 0;
+    z-index: 100;
 }
 
-label.logo{
-    color: white;
-    font-size: xx-large;
-    padding: 0 100px;
+.ligne_radiant{
+    width: 100%;
+    height: 82px;
+    background: linear-gradient(to right, #f216d4, #0050fd, #00cdfd, #00ff92);
+    position:fixed;
+    top: 0;
+}
+
+nav a img{
+    width: 150px;
+    height: 50px;
+    margin: 0 50px;
+}
+
+nav a{
     line-height: 80px;
-}
-
-label.logo a{
-    text-decoration: none;
-    color: white;
 }
 
 nav ul{
@@ -51,7 +66,7 @@ nav ul{
 nav ul li{
     display: inline-block;
     margin: 0 30px;
-    line-height: 80px;
+    line-height: 100px;
 }
 
 nav ul li a{
@@ -62,31 +77,12 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color:maroon;
+    color:#f216d4;
     transition: .5s;
     text-decoration: none;
 }
 
-label.logo a:hover{
-    color:black;
-    transition: .5s;
-}
-
-.checkbtn{
-    font-size: 30px;
-    color:white;
-    float: right;
-    line-height: 80px;
-    margin-right: 1em;
-    display: none;
-    cursor: pointer;
-}
-
-#check{
-    display: none;
-}
-
-@media(max-width:854px){
+/* @media(max-width:854px){
     label.logo{
         padding:0 50px;
         font-size: 22px;
@@ -112,7 +108,4 @@ label.logo a:hover{
     nav ul li a{
         font-size: 20px;
     }
-    #check:checked ~ ul{
-        left:0;
-    }
-}
+}*/
