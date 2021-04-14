@@ -8,13 +8,15 @@
       die('');
     }
 ?>
-    
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.JSON" id="manifest-placeholder">
+    <script src="sw.js" defer></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -31,7 +33,7 @@
   <body class="fond_radiant">
     <?php require ('header.html');?>
 
-    
+
 
     <div class="div_recette">
 
@@ -62,7 +64,7 @@
             <a class="bouton_live" href="cree_live.php?id_recette=<?php  echo $_GET['id_recette']; ?>"><img src="ressources/images/live.png" alt="planifier un live"></a>
           </div>
         </div>
-        
+
         <div class="infos_recette">
           <p class="une_info">Coût: <?php echo $donnees['cout']; ?></p>
           <p class="une_info">Temps de réalisation: <?php  echo $donnees['temps_execution'];?> heures</p>
@@ -72,8 +74,8 @@
         <?php
       }?>
 
-      
-      
+
+
       <div class="ing_pre">
         <div class="ingredients p-3">
           <h4 class="pb-3">Ingrédients</h4>
@@ -85,7 +87,7 @@
               ?>
               <strong><?php  echo $donnees['nom_ingredient']; ?></strong><br>
               <?php
-            } 
+            }
           ?>
         </div>
 
@@ -100,7 +102,7 @@
             <?php if(!empty($donnees['description_etape']))
                   {?>
                     <strong>Etape <?php echo $cpt;?>:</strong>
-                    <?php 
+                    <?php
                   } ?>
             <p><?php  echo $donnees['description_etape']; ?><p>
             <div class="chat">
