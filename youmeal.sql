@@ -190,8 +190,8 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   `cout` enum('economique','moyen','couteux') NOT NULL,
   `note` int(11) DEFAULT NULL,
   `auteur` varchar(20) NOT NULL,
-  `categorie` enum('entree','plat','desert','aperitif') NOT NULL,
-  `regime` enum('vegan','vegetarien','helthy','autre') NOT NULL,
+  `categorie` enum('entree','plat','dessert','aperitif') NOT NULL,
+  `regime` enum('vegan','vegetarien','healthy','autre') NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_recette`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
@@ -201,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `recettes` (
 --
 
 INSERT INTO `recettes` (`id_recette`, `nom_recette`, `date_recette`, `temps_execution`, `cout`, `note`, `auteur`, `categorie`, `regime`, `image`) VALUES
-(30, 'pancake', '2021-04-10', '00:30:00', 'economique', NULL, 'test', 'desert', 'vegetarien', 'pancakes-2291908_1920.jpg'),
+(30, 'pancake', '2021-04-10', '00:30:00', 'economique', NULL, 'test', 'dessert', 'vegetarien', 'pancakes-2291908_1920.jpg'),
 (31, 'test', '2021-04-10', '00:30:00', 'economique', NULL, 'diana11', 'entree', 'vegetarien', ''),
 (32, 'recette', '2021-04-10', '00:00:00', 'economique', NULL, 'diana11', 'entree', 'vegetarien', ''),
 (33, 'tesste', '2021-04-11', '02:30:00', 'couteux', NULL, 'diana11', 'aperitif', 'vegan', 'Capture');

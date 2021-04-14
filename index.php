@@ -1,3 +1,12 @@
+<?php session_start();
+
+if(!isset($_SESSION['login']))
+{
+  header('Location:connexion.html');
+  die('');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -20,18 +29,10 @@
   <body class="fond_radiant">
 
     <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
+    if(isset($_SESSION['login']))
     {
-      header('Location:connexion.html');
-      die('');
-    }else{
       require ('header.html');
     }
-    ?>
-
-    <?php
       include('config.php');
       global $conn;
       if(isset($_GET['recherche']))
@@ -68,19 +69,19 @@
       <div class="container_categorie">
         <div class="div_categorie">
           <a href="liste_recette.php?recherche=aperitif"><div class="cercle" style="background-image: url('ressources/images/categorie_aperitif.jpg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=aperitif">Apéritif</a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=aperitif">Apéritifs</a>
         </div>
         <div class="div_categorie">
           <a href="liste_recette.php?recherche=entree"><div class="cercle" style="background-image: url('ressources/images/categorie_entree.jpg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=entree">Entrée</a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=entree">Entrées</a>
         </div>
         <div class="div_categorie">
           <a href="liste_recette.php?recherche=plat"><div class="cercle" style="background-image: url('ressources/images/categorie_plat.jpeg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plat</a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plats</a>
         </div>
         <div class="div_categorie">
           <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Dessert</a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Desserts</a>
         </div>
       </div>
 

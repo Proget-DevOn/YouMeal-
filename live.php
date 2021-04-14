@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,6 +29,7 @@
 
   <body class="fond_radiant">
 
+<<<<<<< HEAD
     <?php
     session_start();
 
@@ -56,3 +67,26 @@ else{
 ?>
 </body>
 </html>
+=======
+
+    <script type="text/javascript">
+      let api;
+
+      const initIframeAPI = () => {
+        const domain = '8x8.vc';
+        const options = {
+          roomName: 'YouMeal/test',
+          height: 700,
+          parentNode: document.querySelector('#meet')
+        };
+        api = new JitsiMeetExternalAPI(domain, options);
+      }
+
+      window.onload = () => {
+        initIframeAPI();
+      }
+    </script>
+
+    <body><div id="meet"></body>
+    </html>
+>>>>>>> 499a4a27edebb6fb58a77011ddfbdfb779985be6

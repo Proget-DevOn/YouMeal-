@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,18 +29,9 @@
   </head>
 
   <body class="fond_radiant">
+  <?php include("header.html");?>
     
-    <?php
-
-    include("header.html");
     
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }?>
     <h1>programation d'un live</h1>
     <p></p>
     <form class="needs-validation" enctype="multipart/form-data" novalidate action="form_cree_live.php" method="post">

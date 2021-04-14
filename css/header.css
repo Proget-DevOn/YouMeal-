@@ -31,7 +31,7 @@ nav{
     height: 80px;
     display: flex;
     justify-content: space-evenly;
-    border-bottom: 3px solid lightgray;
+    border-bottom: 1px solid lightgray;
     position:fixed;
     top: 0;
     background-color: white;
@@ -214,5 +214,8 @@ nav ul li a:hover{
     nav ul{
         position: absolute;
         right: 110px;
+    }
+    .barre_recherche_div{
+        width: 300px;
     }
 }

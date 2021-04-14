@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,6 +29,7 @@
   </head>
 
   <body class="fond_radiant">
+<<<<<<< HEAD
 
     <?php
 
@@ -32,6 +43,13 @@
     include("config.php");
     global $conn;
     //afficher le profil d'une autre personne
+=======
+<?php
+  include('header.html');
+  include("config.php");
+  global $conn;
+  //afficher le profil d'une autre personne
+>>>>>>> 499a4a27edebb6fb58a77011ddfbdfb779985be6
  if(isset($_GET["pseudo"]))
  {
  $rep=$conn->query("SELECT * from utilisateurs");

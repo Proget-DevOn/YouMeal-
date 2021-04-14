@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login']))
+    {
+      include('connexion.html');
+      die('');
+    }
+?>
+    
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -13,14 +23,7 @@
     <title>Ajout recette</title>
   </head>
   <body class="fond_radiant">
-    <?php
-    session_start();
-
-    if(!isset($_SESSION['login']))
-    {
-      include('connexion.html');
-      die('');
-    }?>
+    
     <?php require ('header.html');?>
     <div class="row justify-content-center">
       <div class="col-6 col-md-4 text-center">
@@ -47,12 +50,12 @@
               <option value="aperitif">Apéritif</option>
               <option value="entree">Entrée</option>
               <option value="plat">Plat</option>
-              <option value="desert">Dessert</option>
+              <option value="dessert">Dessert</option>
             </select>
 
             <select name="regime" class="form-control mt-4 contour_rose"  id="regime">
               <option value="">Régime alimentaire</option>
-              <option value="helthy">Healthy</option>
+              <option value="healthy">Healthy</option>
               <option value="vegetarien">Végétarien</option>
               <option value="vegan">Vegan</option>
               <option value="autre">Autre</option>
