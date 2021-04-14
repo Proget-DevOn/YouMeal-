@@ -40,3 +40,47 @@ footer{
     position: absolute;
     bottom: 0;
 }
+
+footer img{
+    width: 30px;
+    height: 30px;
+}
+
+footer div{
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.div_contact{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.div_reseaux{
+    float: right;
+    right: 0;
+    margin-right: 50px;
+}
+
+footer div a{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color:white;
+}
+
+footer div p{
+    color:white;
+    padding: 0;
+    margin: 0;
+}
+
+.div_reseaux img{
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.div_contact p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
