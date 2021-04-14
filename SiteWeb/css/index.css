@@ -2,27 +2,10 @@
     margin: 0;
     padding: 0;
     color: white;
-    font-family: "Manjari-Thin";
     text-align: center;
 }
 
-@font-face {
-    font-family: "Manjari-Bold";
-    src: url(../resources/font/Manjari-Bold.ttf);
-}
-
-@font-face {
-    font-family: "Manjari-Regular";
-    src: url(../resources/font/Manjari-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Manjari-Thin";
-    src: url(../resources/font/Manjari-Thin.ttf);
-}
-
 #h1{
-    font-family: "Manjari-Bold";
     color: white;
     padding-top: 22.5%;
     font-size: 100px;
@@ -32,7 +15,6 @@
 
 #scroll{
     position: relative;
-    font-family: "Manjari-Bold";
     top: -300px;
     padding-top: 5px;
     width: 250px;
@@ -118,6 +100,26 @@ h2{
 
 .clients{
     height: 100px;
+}
+
+#clients{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 0 15px;
+}
+
+#client1{
+    width: 120px;
+    height: auto;
+}
+
+#client4{
+    width: 120px;
+    height: auto;
 }
 
 @media(max-width:1200px){

@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container police_cano">
             <h1 id="h1">Bienvenue chez Devon !</h1>
             <button onclick="scrollWin(0, 1000)" id="scroll">NOUS CONNAÎTRE</button>
             <h2 id="scrolldown">Notre expertise</h2>
@@ -46,10 +46,10 @@
 
             <h2>Ils nous font confiance</h2>
             <div id="clients">
-                <img class="clients" src="images/airbnb.png" alt="">
-                <img class="clients" src="images/paypal.png" alt="">
-                <img class="clients" src="images/spotify.png" alt="">
-                <img class="clients" src="images/booking.png" alt="">
+                <img id="client1" class="clients" src="images/airbnb.png" alt="">
+                <img id="client2" class="clients" src="images/paypal.png" alt="">
+                <img id="client3" class="clients" src="images/spotify.png" alt="">
+                <img id="client4" class="clients" src="images/booking.png" alt="">
             </div>
         </div>
     </body>
