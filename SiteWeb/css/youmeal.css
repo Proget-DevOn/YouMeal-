@@ -1,11 +1,41 @@
-h1{
-    font-size: 5em;
-}
-
-p{
-    font-size: 2em;
-}
 
 .centre{
     text-align: center;
+    font-size: 1.7em;
+    color: white;
+}
+
+#logo {
+    width: 15%;
+    margin-left: 40%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-right: auto;
+
+  }
+
+#presentation{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#bouton{
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 35px;
+    border-radius: 20px;
+ 
+}
+
+.bouton{
+    width: 203px;
+    height: 38px;
+    background: linear-gradient(to right, #f216d4, #0050fd, #00cdfd, #00ff92);
+    border-radius: 20px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
