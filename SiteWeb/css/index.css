@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Manjari-Thin";
+}
+
+@font-face {
+    font-family: "Manjari-Bold";
+    src: url(../resources/font/Manjari-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Manjari-Regular";
+    src: url(../resources/font/Manjari-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Manjari-Thin";
+    src: url(../resources/font/Manjari-Thin.ttf);
+}
+
+h1{
+    font-family: "Manjari-Bold";
+    color: white;
+    padding-top: 50px;
+}
