@@ -9,24 +9,20 @@
 
         <?php include('header.html');?>
 
-        <div class="div-categoryContainer">
-            <img id="logo" src="css\image\LOGO-02.png" alt="Logo YouMeal"/>
-        
-            <div class="paragraph-right">
-                <h1>YouMeal</h1>
-            </div>
-        </div>
-        <p class="centre">YouMeal est un projet universitaire visant à créer une application de live de cuisine entre particuliers.</p>
-        <p class="centre">Organiser des diffusions en direct avec d'autres utilisateurs afin de cuisiner le même plat tous ensembles en visio !</p>
-<<<<<<< HEAD
-        
-        <img id="presentation "src="css\image\presentation.png" alt="Présentation de l'appli"/>
+            <img id="logo" src="images\logo_youmeal.png" alt="Logo YouMeal"/>
 
-=======
-        <img class="centre "src="images/logo_youmeal.png" alt="Logo YouMeal"/>
-        <img class="centre "src="images/Accueil.png" alt="Logo YouMeal"/>
-        <img class="centre "src="images/page_live.png" alt="Logo YouMeal"/>
->>>>>>> 07714f0b4ac48ef15c82b374e5fce7ad8c79dd20
+        <p class="centre police_cano">YouMeal est un projet universitaire visant à créer une application de live de cuisine entre particuliers.</p>
+        <p class="centre police_cano">Organiser des diffusions en direct avec d'autres utilisateurs afin de cuisiner le même plat tous ensembles en visio !</p>
+        
+        <img id="presentation"src="images\presentation.png" alt="Présentation de l'appli"/>
 
+        <div class="bouton">
+        <form action="https://youmeal.000webhostapp.com/">
+            <button type="submit" id="bouton" class="police_cano">Accès à l'application !</button>
+        </form>
+            
+        </div> 
+        
+        <?php include('footer.html');?>
     </body>
 </html>
