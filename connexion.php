@@ -17,7 +17,7 @@ if(password_verify($password, $rows[0]['password'])){
         echo '<script language="JavaScript">window.location=\'' . $dest . '\'</script>';
       exit;
       }
-}
 
 include('connexion.html');
+include('footer.html');
 ?>
