@@ -127,5 +127,6 @@
       </script>
       <button class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" type="submit">Valider</button>
     </form>
+    <?php include('footer.html');?>
   </body>
 </html>
