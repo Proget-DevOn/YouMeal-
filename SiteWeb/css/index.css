@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     color: white;
+}
+#text-center{
     text-align: center;
 }
 
@@ -15,6 +17,7 @@
 
 #scroll{
     position: relative;
+    margin: auto 0;
     top: -300px;
     padding-top: 5px;
     width: 250px;
