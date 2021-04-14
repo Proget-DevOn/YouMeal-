@@ -62,3 +62,5 @@ function scrollWin() {
     document.getElementById('scrolldown').scrollIntoView();
 }
 </script>
+
+<?php include('footer.html');?>
