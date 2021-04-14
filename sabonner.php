@@ -9,7 +9,7 @@ include('profil.php');
   $rep=$conn->query($sql);
   if($rep->fetch(PDO::FETCH_BOTH))
   {
-    echo " ce style est dejà dans vos favoris";
+    echo " vous déja abboné";
   }
   else
   {
