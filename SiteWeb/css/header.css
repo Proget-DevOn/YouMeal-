@@ -57,7 +57,7 @@ nav ul li{
 nav ul li a{
     color: white;
     font-family: 'Oswald', sans-serif;
-    font-size: large;
+    font-size: x-large;
     line-height: 80px;
 }
 
@@ -85,12 +85,6 @@ label.logo a:hover{
 #check{
     display: none;
 }
-
-/* @media(max-width:952px){
-    label.logo{
-        font-size: 22px;
-    }
-} */
 
 @media(max-width:854px){
     label.logo{
