@@ -31,20 +31,43 @@
 }
 
 #scroll{
-    width: 150px;
+    position: relative;
+    font-family: "Manjari-Bold";
+    top: -300px;
+    padding-top: 5px;
+    width: 250px;
     height: 60px;
     border-radius: 30px;
     border: none;
     background-color: transparent;
     border: 2px solid white;
     transition: 0.5s;
+    letter-spacing: 5px;
+    color: #00ff92;
+    text-decoration: none;
+
 }
 
 #scroll:hover{
     background-color: white;
     color: black;
+    letter-spacing: 7px;
+    width: 280px;
+
 }
 
+#scrolldown{
+    height: 100%;
+}
+
+#link-button{
+    text-decoration: none;
+    color: white;
+}
+
+#link-button:hover{
+    color: black;
+}
 h2{
     font-family: "Manjari-Regular";
     padding-top: 30px;

@@ -18,14 +18,8 @@
     <body>
         <div class="container">
             <h1 id="h1">Bienvenue chez Devon !</h1>
-            <button id="scroll">Cliquez ici</button>
-            <p>Vous venez d'attérir sur le site de l'agence Devon.</p>
-            <p>Ici, vous serez amenés à découvrir les membres de l'équipe et les travaux réalisés.<br> Si vous souhaitez nous contacter.</p>
-            <h2>Nos objectifs</h2>
-            <ul>
-                <li>Devon s’engage à apporter l’écoute nécessaire pour répondre aux besoins, qualité et authenticité tout au long des projets.</li>
-            </ul>
-            <h2>Notre expertise</h2>
+            <button onclick="scrollWin(0, 1000)" id="scroll">NOUS CONNAÎTRE</button>
+            <h2 id="scrolldown">Notre expertise</h2>
             
             <div id="images">
                 <div class="center"><img id="image1" src="images/codage-web.png">Développement web</div>
@@ -45,3 +39,9 @@
         </div>
     </body>
 </html>
+
+<script>
+function scrollWin(x, y) {
+  window.scrollBy(x, y);
+}
+</script>
