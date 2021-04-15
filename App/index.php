@@ -84,8 +84,8 @@ if(!isset($_SESSION['login']))
           <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plats</a>
         </div>
         <div class="div_categorie">
-          <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Desserts</a>
+          <a href="liste_recette.php?recherche=dessert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=dessert">Desserts</a>
         </div>
       </div>
 
