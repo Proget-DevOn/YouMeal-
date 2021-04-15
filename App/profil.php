@@ -53,11 +53,11 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
       <div class="div_image">
           <?php if(is_file("image/profil/".$donnees['photo']))
           {?>
-            <img width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
+            <img class="img-profil" width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
             <?php
           }else
           {?>
-            <img width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
+            <img class="img-profil" width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
             <?php
           }?>
       </div>
@@ -104,11 +104,11 @@ else {
       <div class="div_image">
           <?php if(is_file("image/profil/".$donnees['photo']))
           {?>
-            <img width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
+            <img class="img-profil" width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
             <?php
           }else
           {?>
-            <img width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
+            <img class="img-profil" width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
             <?php
           }?>
       </div>

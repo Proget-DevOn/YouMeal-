@@ -119,4 +119,12 @@ body{
 
 .body-center{
     text-align: center;
+    background-color: #f7c804;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.img-profil{
+    border-radius: 20px;
 }
