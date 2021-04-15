@@ -5,7 +5,9 @@
     list-style: none;
     box-sizing: border-box;
 }
-
+html{
+    min-height: 100%;
+}
 
 body{
     margin-top: 100px;

@@ -87,17 +87,50 @@ if(!isset($_SESSION['login']))
       </div>
 
       <div class="colonnes justify-content-center">
-          <?php $sql='SELECT * FROM recettes';
+        <h1 class="police_monogram">Quelques recettes</h1>
+          <?php $sql='SELECT * FROM recettes order by rand()';
           $rep = $conn->query($sql);
+          $cpt = 0;
           while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
           {
+            if($cpt < 3)
             include("composant_aff_recette.php");
+            $cpt++;
           }
             ?>
       </div>
+
+      <div class="colonnes justify-content-center">
+        <h1 class="police_monogram">Quelques lives</h1>
+          <?php $sql='SELECT * from live inner join recettes on live.ID_recette=recettes.id_recette order by rand()';
+          $rep = $conn->query($sql);
+          $cpt = 0;
+          while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
+          {
+            if($cpt < 3)
+            { ?>
+              <div class="div_recette" style="background-image: url('image/image_recettes/<?php  echo $donnees['image']; ?>');">
+                <a href="live.php?ID_live=<?php  echo $donnees['ID_live']; ?>"><img class="image" src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt=""></a>
+                <a href="profil.php?pseudo=<?php  echo $donnees['auteur']; ?>" class="auteur_recette"><?php  echo $donnees['auteur'];?></a><br>
+                <!-- <a href="affiche_recette.php?id_recette=<?php  echo $donnees['id_recette']; ?>">
+                  <img src="image/image_recettes/<?php  echo $donnees['image']; ?>" alt="recette" width="300" height="200">
+                </a> -->
+                <strong><a href="live.php?ID_live=<?php  echo $donnees['ID_live']; ?>" class="nom_recette">
+                  <?php echo $donnees['nom_recette'];?>
+                </a></strong>
+                <p class="categorie_recette"><?php echo $donnees['date_live']; ?></p>
+                <!-- <p><?php echo $donnees['cout']; ?> Temps de realisation:<?php  echo $donnees['temps_execution']; ?> Régime:<?php  echo $donnees['regime']; ?> Miam<?php  echo $donnees['note']; ?> </p> -->
+              </div>
+              <?php $cpt++;
+            } ?>
+            <?php
+          }
+            ?>
+        </div>
       <?php
+      include('footer.html');
     }?>
-    <?php include('footer.html');?>
+    
   </body>
 
 </html>
