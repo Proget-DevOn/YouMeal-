@@ -23,7 +23,7 @@
       "purpose": "maskable"
     }
   ],
-   "display": "fullscreen",
+   "display": "standalone",
     "background_color": "#ffefff",
     "theme_color": "#ffefff",
     "orientation":"portrait-primary"
