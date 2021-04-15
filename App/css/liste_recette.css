@@ -127,12 +127,6 @@ body{
     justify-content: space-evenly;
 }
 
-@media(min-width:1300px){
-    .colonnes{
-        width: fit-content;
-    }
-}
-
 @media(max-width:1040px){
     .colonnes{
         width: 680px;
