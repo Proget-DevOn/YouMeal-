@@ -102,3 +102,5 @@
         ?>
   </body>
 </html>
+
+<?php include('footer.html');?>
