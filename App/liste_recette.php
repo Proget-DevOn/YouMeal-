@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="css/liste_recette.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="manifest" href="manifest.JSON" id="manifest-placeholder">
 
@@ -58,7 +59,24 @@
       }else
       {
         ?>
-
+        <div class="container_categorie">
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=aperitif"><div class="cercle" style="background-image: url('ressources/images/categorie_aperitif.jpg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=aperitif">Apéritifs</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=entree"><div class="cercle" style="background-image: url('ressources/images/categorie_entree.jpg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=entree">Entrées</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=plat"><div class="cercle" style="background-image: url('ressources/images/categorie_plat.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plats</a>
+        </div>
+        <div class="div_categorie">
+          <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Desserts</a>
+        </div>
+      </div>
         <div class="text-center mt-5">
           <p><a class="lien_ajout_recette police_monogram" href="ajouter_recette.php">Ajouter une recette</a></p>
         </div>
@@ -75,9 +93,10 @@
         </div>
 
         <?php
+        include('footer.html');
       }
         ?>
-        <?php include('footer.html');?>
+        
   </body>
 </html>
 
