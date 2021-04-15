@@ -17,7 +17,7 @@
     },
 
     {
-      "src": "ressources/logo_youmealm.png",
+      "src": "ressources/logo_youmeal512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
