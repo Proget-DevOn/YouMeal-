@@ -1,6 +1,7 @@
 body{
     margin-top: 100px;
     font-family: 'Manjari-Regular';
+    position: relative;
 }
 
 @font-face {

@@ -37,39 +37,36 @@ if(!isset($_SESSION['login']))
     {
       require ('header.html');
     }
-      include('config.php');
-      global $conn;
-      if(isset($_GET['recherche']))
-      {?>
+    include('config.php');
+    global $conn;
+    if(isset($_GET['recherche']))
+    {?>
 
-        <div class="colonnes justify-content-center">
+      <div class="colonnes justify-content-center">
 
-          <?php $sql="SELECT * from recettes WHERE
-          nom_recette LIKE '%".$_GET['recherche']."%'
-          OR auteur LIKE '%".$_GET['recherche']."%'
-          OR  regime like '%".$_GET['recherche']."%'
-          OR categorie like '%".$_GET['recherche']."%'";
-          $rep = $conn->query($sql);
-          while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
-          {
-            include("composant_aff_recette.php");
-          }
-          ?>
+        <?php $sql="SELECT * from recettes WHERE
+        nom_recette LIKE '%".$_GET['recherche']."%'
+        OR auteur LIKE '%".$_GET['recherche']."%'
+        OR  regime like '%".$_GET['recherche']."%'
+        OR categorie like '%".$_GET['recherche']."%'";
+        $rep = $conn->query($sql);
+        while($donnees = $rep->fetch(PDO::FETCH_ASSOC))
+        {
+          include("composant_aff_recette.php");
+        }
+        ?>
 
-        </div>
+      </div>
 
-       <?php
-      }
-      else {
+      <?php
+    }
+    else 
+    {
       ?>
       <h1 class="police_monogram mx-5" style="text-transform: capitalize;">Hello
       <?php
       echo htmlspecialchars($_SESSION['login']);?> !</h1>
       <p class="mx-5 bolt"><strong>Qu'est-ce qu'on prépare aujourd'hui?</strong></p>
-<!--
-      <div class="text-center mt-5">
-        <p><a href="ajouter_recette.php">ajouter une recette</a></p>
-      </div> -->
       <div class="container_categorie">
         <div class="div_categorie">
           <a href="liste_recette.php?recherche=aperitif"><div class="cercle" style="background-image: url('ressources/images/categorie_aperitif.jpg')"></div></a>
@@ -84,8 +81,8 @@ if(!isset($_SESSION['login']))
           <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plats</a>
         </div>
         <div class="div_categorie">
-          <a href="liste_recette.php?recherche=dessert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=dessert">Desserts</a>
+          <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Desserts</a>
         </div>
       </div>
 
@@ -97,14 +94,10 @@ if(!isset($_SESSION['login']))
             include("composant_aff_recette.php");
           }
             ?>
-        </div>
-
-    <?php
-    }
-    include('footer.html');
-    ?>
-    </div>
-    </div>
+      </div>
+      <?php
+    }?>
+    <?php include('footer.html');?>
   </body>
 
 </html>
