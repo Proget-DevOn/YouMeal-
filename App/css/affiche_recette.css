@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    margin-top: 100px;
+}
+
+@font-face {
+    font-family: 'monogramregular';
+    src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('../ressources/font/monogram-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.police_monogram{
+    font-family: 'monogramregular';
+    color: #fc9778;
+}
+
+.fond_uni{
+    background-color: #ffe1a5;
+}
+
+.fond_radiant {
+    background-image: linear-gradient(to bottom, white, #fae381);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    height: 100%;
+}
+
+.div_recette{
+    margin: 3em;
+}
+
+.top_recette{
+    width: fit-content;
+    display: inline-block;
+}
+
+.infos_recette{
+    width: fit-content;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.titre_recette{
+    font-size: 50px;
+}
+
+.div_image{
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.div_image a{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    padding-left: 110px;
+    background-color: #ffcc3c;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 30px;
+    text-decoration: none;
+}
+
+.image{
+    border-top-right-radius: 30px;
+    width: 450px;
+    height: 300px;
+}
+
+.photo_profil{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: white;
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 1px solid #ffcc3c;
+    position: absolute;
+    bottom: -45px;
+    left: 20px;
+    z-index: 2;
+    background-image: url("../ressources/images/profil_vide.jpg");
+}
+
+.une_info{
+    margin: 0;
+    padding: 0;
+}
+
+.ingredients{
+    background-color: #ffcc94;
+    width: fit-content;
+    display:inline-block;
+    vertical-align:top
+}
+
+.etapes{
+    display: inline-block;
+}
+
+.boutons_recette{
+    display: block;
+}
+
+.ing_pre{
+    margin-top: 20px;
+}
+
+.bouton_live{
+    margin-left: 320px;
+}
+
+@media(max-width:550px){
+
+    .image{
+        border-top-right-radius: 30px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .div_image a{
+        bottom: -40px;
+        padding-left: 90px;
+        height: 40px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .top_recette{
+        width: 300px;
+    }
+
+    .photo_profil{
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        bottom: -35px;
+        left: 20px;
+    }
+
+    .bouton_live{
+        margin-left: 170px;
+    }
+}

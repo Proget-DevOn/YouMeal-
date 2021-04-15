@@ -1,0 +1,66 @@
+body{
+    margin-top: 100px;
+    font-family: 'Manjari-Regular';
+}
+
+@font-face {
+    font-family: 'monogramregular';
+    src: url('../ressources/font/monogram-webfont.woff2') format('woff2'),
+         url('../ressources/font/monogram-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manjari-Bold';
+    src: url('../ressources/font/Manjari-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manjari-Regular';
+    src: url('../ressources/font/Manjari-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manjari-Thin';
+    src: url('../ressources/font/Manjari-Thin.ttf') format('ttf');
+    font-weight: thin;
+    font-style: normal;
+}
+
+.cercle{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: #ffcc3c;
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 1px solid #ffcc3c;
+}
+
+.container_categorie{
+    margin: 40px 0;
+    margin-left: 40px;
+}
+
+.div_categorie{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.lien_categorie{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.lien_categorie:hover{
+    text-decoration: none;
+    color: grey;
+    transition: .5s;
+}

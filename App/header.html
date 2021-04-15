@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="css/header.css">
+<link rel="manifest" href="/YouMeal-/manifest.JSON" id="manifest-placeholder">
+  <script src="sw.js" defer></script>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="index.php">YouMeal</a></label>
+
+    <div class="barre_recherche_div">
+      <form  method="GET" action="">
+        <button class="barre_recherche_btn" type="submit" value="chercher"><img src="ressources/recherche.png" alt="recherche"></button>
+        <input class="barre_recherche_input" type="text" name="recherche">
+      </form>
+    </div>
+
+    <ul id="menu">
+      <li><a href="liste_live.php">Lives</a></li>
+        <li><a href="liste_recette.php">Recettes</a></li>
+        <li><form action="deconnexion.php"><button type="submit" id="btn_deconnexion">Déconnexion</button></form></li>
+    </ul>
+
+    <a href=""><img src="ressources/messagerie.png" alt="messages"></a>
+  </nav>

@@ -1,0 +1,31 @@
+{
+  "short_name": "YouMeal",
+  "name": "application YouMeal",
+  "description": "Application web progressive du reseau social culinaire",
+  "start_url": "/connexion.html",
+  "icons": [
+    {
+      "src": "ressources/logo_youmeal192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+
+    {
+      "src": "ressources/logo_youmeal512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+    {
+      "src": "ressources/logo_youmealm.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+   "display": "fullscreen",
+    "background_color": "#ffefff",
+    "theme_color": "#ffefff",
+    "orientation":"portrait-primary"
+
+ }

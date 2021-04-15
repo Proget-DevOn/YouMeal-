@@ -7,7 +7,6 @@ if(!isset($_SESSION['login']))
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
