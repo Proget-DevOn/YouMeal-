@@ -31,8 +31,10 @@
 
   <body class="fond_radiant">
 
+    
     <?php
     include("header.html");
+    
     include("config.php");
     global $conn;
     //afficher le profil d'une autre personne
@@ -43,15 +45,33 @@ while($donnees=$rep->fetch(PDO::FETCH_BOTH))
 {
   if( $donnees['pseudo']==$_GET['pseudo'])
   {
-    ?><h2>Profil de <?php echo $donnees['pseudo'];?></h2>
-    <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
-    <p>Nom: <?php echo $donnees['nom'];?></p><?php
-    ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
-  <p>Bio: <?php echo $donnees['bio'];?></p><?php
+    ?>
+
+    <div class="body-center">
+      <h2>Profil de <div style="text-transform: capitalize; display:inline-block"><?php echo $donnees['pseudo'];?></div></h2>
+      
+      <div class="div_image">
+          <?php if(is_file("image/profil/".$donnees['photo']))
+          {?>
+            <img width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
+            <?php
+          }else
+          {?>
+            <img width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
+            <?php
+          }?>
+      </div>
+
+      <p style="text-transform: capitalize;"><strong>Nom:</strong> <?php echo $donnees['nom'];?></p><?php
+      ?><p style="text-transform: capitalize;"><strong>Prénom:</strong> <?php echo $donnees['prenom'];?></p>
+      <p><strong>Bio:</strong> <?php echo $donnees['bio'];?></p>
+  <?php
 }
 }?>
-<a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
-<a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">S'abonner</button></a>
+
+      <a href="chat.php?a=<?php  echo $_GET['pseudo']; ?>">Envoyer un message</a><br/>
+      <a href="sabonner.php?pseudo=<?php  echo $_GET['pseudo']; ?>"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="suivre">S'abonner</button></a>
+    </div>
 <?php
 $rep=$conn->query("SELECT * from abonnement inner join utilisateurs on abonnement.pseudo_abonnement=utilisateurs.pseudo and pseudo_abonne='". $_GET['pseudo']."'");
           while ($donnees=$rep->fetch(PDO::FETCH_BOTH)){
@@ -76,15 +96,31 @@ else {
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
-     ?><h2 style="text-transform: capitalize;"><?php echo $donnees['pseudo'];?></h2>
-     <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
-     <p><strong>Nom:</strong> <?php echo $donnees['nom'];?></p><?php
+     ?>
+     
+    <div class="body-center"> 
+     <h2 style="text-transform: capitalize;"><?php echo $donnees['pseudo'];?></h2>
+
+      <div class="div_image">
+          <?php if(is_file("image/profil/".$donnees['photo']))
+          {?>
+            <img width="300" height="auto" class="image" src="image/profil/<?php  echo $donnees['photo']; ?>" alt="recette">
+            <?php
+          }else
+          {?>
+            <img width="300" height="auto" class="image" src="ressources/images/pas_image.jpg" alt="">
+            <?php
+          }?>
+      </div>
+
+    <p><strong>Nom:</strong> <?php echo $donnees['nom'];?></p><?php
      ?><p><strong>Prénom:</strong> <?php echo $donnees['prenom'];?></p>
-   <p><strong>Bio:</strong> <?php echo $donnees['bio'];?></p><?php
+   <p><strong>Bio:</strong> <?php echo $donnees['bio'];?></p>
+   <?php
   }
  }
- ?><a href="modifier.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="modifier">Modifier</button></a><?php
-
+ ?><a href="modifier.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="modifier">Modifier</button></a>
+    </div><?php
 
 
 
@@ -103,4 +139,6 @@ else {
 }
  ?>
 </body>
+
 </html>
+<?php include('footer.html');?>
