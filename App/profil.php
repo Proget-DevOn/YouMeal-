@@ -26,7 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script src='https://meet.jit.si/external_api.js'></script>
     <script src='https://8x8.vc/external_api.js'></script>
-    <title>YouMeal</title>
+    <title>YouMeal - Mon profil</title>
   </head>
 
   <body class="fond_radiant">
@@ -76,11 +76,11 @@ else {
  {
    if( $donnees['pseudo']==$_SESSION['login'])
    {
-     ?><h2><?php echo $donnees['pseudo'];?></h2>
+     ?><h2 style="text-transform: capitalize;"><?php echo $donnees['pseudo'];?></h2>
      <a href="image/profil/<?php  echo $donnees['photo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="200" height="200"></a>
-     <p>Nom: <?php echo $donnees['nom'];?></p><?php
-     ?><p>Prénom: <?php echo $donnees['prenom'];?></p>
-   <p>Bio: <?php echo $donnees['bio'];?></p><?php
+     <p><strong>Nom:</strong> <?php echo $donnees['nom'];?></p><?php
+     ?><p><strong>Prénom:</strong> <?php echo $donnees['prenom'];?></p>
+   <p><strong>Bio:</strong> <?php echo $donnees['bio'];?></p><?php
   }
  }
  ?><a href="modifier.php"><button type="button" class="btn bouton_sinscrire text-white mt-5 mb-5 contour_rose center-block px-5" name="modifier">Modifier</button></a><?php
@@ -99,14 +99,8 @@ else {
                ?><p><strong> <?php echo $donnees['pseudo'];?></strong></p>
                <a href="profil.php?pseudo=<?php  echo $donnees['pseudo']; ?>"><img src="image/profil/<?php  echo $donnees['photo']; ?>" alt="" width="100" height="100"></a>
               <?php
-
              }
-
-
 }
-
-
-
  ?>
 </body>
 </html>

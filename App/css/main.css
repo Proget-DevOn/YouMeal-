@@ -112,3 +112,7 @@ body{
     left: 10px;
     width: 80px;
 }
+
+.body-center{
+    text-align: center;
+}
