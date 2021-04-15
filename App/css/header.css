@@ -146,7 +146,7 @@ nav ul li a:hover{
 .checkbtn{
     font-size: 30px;
     color:#fc9778;
-    line-height: 80px;
+    line-height: 90px;
     cursor: pointer;
     display: none;
 }
@@ -161,7 +161,7 @@ nav ul li a:hover{
     }
 } */
 
-@media(max-width:854px){
+@media(max-width:1100px){
     label.logo{
         padding:0 0;
         display: none;
@@ -197,7 +197,7 @@ nav ul li a:hover{
     }
 }
 
-@media(min-width:1000px){
+@media(min-width:1100px){
     nav{
         justify-content: normal;
     }
@@ -216,6 +216,6 @@ nav ul li a:hover{
         right: 110px;
     }
     .barre_recherche_div{
-        width: 300px;
+        width: 25%;
     }
 }
