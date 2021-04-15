@@ -199,7 +199,7 @@ nav ul li a:hover{
     }
 }
 
-@media(min-width:1500px){
+@media(min-width:1050px){
     nav{
         justify-content: normal;
     }
