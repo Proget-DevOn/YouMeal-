@@ -1,3 +1,4 @@
+  <script>
   let api;
   let salle="<?php echo $donnees['ID_live']; ?>"
   const initIframeAPI = () => {
@@ -16,3 +17,5 @@
   window.onload = () => {
     initIframeAPI();
   }
+
+</script>
