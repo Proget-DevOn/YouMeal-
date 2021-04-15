@@ -5,9 +5,13 @@
     list-style: none;
     box-sizing: border-box;
 }
-
+html{
+    height: 100%;
+}
 body{
     margin-top: 100px;
+    min-height: 100%;
+    position: relative;
 }
 
 @font-face {

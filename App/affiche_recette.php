@@ -114,5 +114,6 @@
         </div>
       </div>
     </div>
+    <? include('footer.html')?>
   </body>
 </html>

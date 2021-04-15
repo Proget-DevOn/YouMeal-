@@ -138,7 +138,7 @@ else {
              }
 }
  ?>
+ <?php include('footer.html');?>
 </body>
-
 </html>
-<?php include('footer.html');?>
+
