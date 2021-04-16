@@ -8,3 +8,5 @@ document.getElementById("form").onsubmit = function(){
         return false;
     }
 }
+
+window.onload = function(){ document.getElementById("loading").style.display = "none" }

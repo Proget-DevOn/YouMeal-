@@ -32,6 +32,11 @@ if(!isset($_SESSION['login']))
 
   <body class="fond_radiant">
 
+
+  <div id="loading">
+  <img id="loading-image" src="ressources/loading-page.png" alt="Loading..." />
+</div>
+
     <?php
     if(isset($_SESSION['login']))
     {
@@ -134,3 +139,7 @@ if(!isset($_SESSION['login']))
   </body>
 
 </html>
+
+<?php
+echo '<script>window.onload = function(){ document.getElementById("loading").style.display = "none" }</script>';
+?>
