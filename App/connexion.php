@@ -21,3 +21,7 @@ if(password_verify($password, $rows[0]['password'])){
 include('connexion.html');
 include('footer.html');
 ?>
+
+<?php
+echo '<script>window.onload = function(){ document.getElementById("loading").style.display = "none" }</script>';
+?>

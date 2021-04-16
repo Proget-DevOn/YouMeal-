@@ -25,12 +25,17 @@ if(!isset($_SESSION['login']))
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    <link rel="manifest" href="manifest.JSON" id="manifest-placeholder">
+    <link rel="manifest" href="manifest.json" id="manifest-placeholder">
 
     <title>YouMeal</title>
   </head>
 
   <body class="fond_radiant">
+
+
+  <div id="loading">
+  <img id="loading-image" src="ressources/loading-page.png" alt="Loading..." />
+</div>
 
     <?php
     if(isset($_SESSION['login']))
@@ -81,8 +86,8 @@ if(!isset($_SESSION['login']))
           <a class="lien_categorie" href="liste_recette.php?recherche=plat">Plats</a>
         </div>
         <div class="div_categorie">
-          <a href="liste_recette.php?recherche=desert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
-          <a class="lien_categorie" href="liste_recette.php?recherche=desert">Desserts</a>
+          <a href="liste_recette.php?recherche=dessert"><div class="cercle" style="background-image: url('ressources/images/categorie_dessert.jpeg')"></div></a>
+          <a class="lien_categorie" href="liste_recette.php?recherche=dessert">Desserts</a>
         </div>
       </div>
 
@@ -134,3 +139,7 @@ if(!isset($_SESSION['login']))
   </body>
 
 </html>
+
+<?php
+echo '<script>window.onload = function(){ document.getElementById("loading").style.display = "none" }</script>';
+?>

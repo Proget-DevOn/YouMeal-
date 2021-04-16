@@ -38,7 +38,7 @@
   $dest="index.php";
   echo '<script language="JavaScript">window.location=\'' . $dest.'\'</script>';
 } ?>
-    <form class="needs-validation"  novalidate action="ajout_ingredient" method="post">
+    <form class="needs-validation"  novalidate action="ajout_ingredient.php" method="post">
       <div class="row justify-content-center mt-5">
 
         <div class="col-4 col-md-4 text-center" id="inserer_ing">

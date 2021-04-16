@@ -138,6 +138,5 @@ else {
              }
 }
  ?>
- <?php include('footer.html');?>
 </body>
 </html>

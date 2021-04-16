@@ -18,7 +18,7 @@ if(count($_POST)>0){
     //echo $nb_ing;
     for ($j=1; $j <$nb_ing ; $j++) {
         $valeur=${"ingredient".(string)$j};
-        $sql = "INSERT INTO ingredients(id_recette,nom_ingredient) VALUES ('".${"id_recette"}."','".$valeur."')";
+        $sql = "INSERT INTO ingredients(id_recette,nom_ingredient) VALUES ('".$id_recette."','".$valeur."')";
         if(  $req=$conn->query($sql)==TRUE) {
             echo "reussi";
         }
