@@ -1,10 +1,9 @@
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("App/serviceWorker.js");
-}
+  navigator.serviceWorker
+    .register("serviceWorker.js", { scope: "index.php" })
+    };
 
 /*
-
-********1E CODE********
 if ('serviceWorker' in navigator) {
   caches.keys().then(function(cacheNames) {
     cacheNames.forEach(function(cacheName) {
